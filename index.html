@@ -213,13 +213,13 @@
                 <div class="lg:col-span-7">
                     <span class="text-brand-btc text-xs font-bold uppercase tracking-wider mb-2 block">Otimização Tributária</span>
                     <h2 class="text-3xl font-bold text-white mb-6 leading-tight">
-                        Transforme Vendas em <br> <span class="text-brand-usdt">Permuta de Ativos Digitais</span>
+                        Transforme Vendas em <br> <span class="text-brand-usdt">Ativos Digitais</span>
                     </h2>
                     <p class="text-slate-300 text-lg mb-6 leading-relaxed">
-                        Ao aceitar criptoativos, sua operação comercial evolui. Juridicamente, você pode caracterizar transações como <strong>permuta de bens e serviços</strong>.
+                        Ao aceitar criptoativos, sua operação comercial evolui para um modelo de recebimento mais eficiente.
                     </p>
                     <p class="text-slate-400 mb-8 leading-relaxed">
-                        O resultado? Você posterga ou elimina o fato gerador de diversos impostos que incidem sobre a moeda Fiat (Real). O imposto sobre ganho de capital só ocorre <strong>se e quando</strong> você decidir converter para Reais. Se mantiver em moeda forte ou usar na economia circular, a economia tributária pode chegar a <strong>40%</strong>.
+                        Juridicamente, você incorpora ativos digitais ao seu patrimônio. O fato gerador do imposto sobre ganho de capital ocorre apenas no momento da <strong>conversão (realização)</strong> para Reais. Enquanto você mantiver o valor em moeda forte ou utilizá-lo na economia circular, a eficiência tributária pode chegar a <strong>40%</strong>.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-6">
@@ -352,7 +352,9 @@
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-bold text-white mb-2">Dolarização Sintética</h2>
-                <p class="text-slate-400">Proteção patrimonial contra a desvalorização cambial.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Além de você pagar impostos em todas as etapas de uso do dinheiro, a inflação corrói o poder de compra do que sobra. Proteja seu patrimônio mantendo-o em moeda forte.
+                </p>
             </div>
             
             <div class="bg-slate-900 border border-slate-800 p-8 rounded-xl">
@@ -466,14 +468,14 @@
                             <tr class="text-xs text-slate-500 uppercase border-b border-slate-700">
                                 <th class="py-3 font-medium">Descrição</th>
                                 <th class="py-3 font-medium text-right text-red-400">Sistema Bancário</th>
-                                <th class="py-3 font-medium text-right text-brand-usdt">Sistema Crypto (Permuta)</th>
+                                <th class="py-3 font-medium text-right text-brand-usdt">Sistema Crypto</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-300 font-mono text-sm">
                             <tr class="border-b border-slate-800">
                                 <td class="py-4">Preço de Venda</td>
                                 <td class="py-4 text-right text-slate-400" id="fiatPrice">R$ 5.000,00</td>
-                                <td class="py-4 text-right text-white" id="cryptoPrice">R$ 4.500,00</td>
+                                <td class="py-4 text-right text-white"><span class="block text-[10px] text-slate-500 uppercase tracking-tight">c/ Desconto</span><span id="cryptoPrice">R$ 4.500,00</span></td>
                             </tr>
                             <tr class="border-b border-slate-800">
                                 <td class="py-4 text-slate-500">Desconto Aplicado</td>
@@ -481,8 +483,8 @@
                                 <td class="py-4 text-right text-brand-btc" id="cryptoDiscountText">10%</td>
                             </tr>
                             <tr class="border-b border-slate-800">
-                                <td class="py-4">(-) Impostos (Simples/Presumido)</td>
-                                <td class="py-4 text-right text-red-400/80" id="fiatTax">- R$ 600,00</td>
+                                <td class="py-4">(-) Carga Tributária Total (~18%)</td>
+                                <td class="py-4 text-right text-red-400/80" id="fiatTax">- R$ 900,00</td>
                                 <td class="py-4 text-right text-slate-500"><span class="text-xs text-slate-600 uppercase mr-2">(Diferido)</span> R$ 0,00</td>
                             </tr>
                             <tr class="border-b border-slate-800">
@@ -498,7 +500,7 @@
                             <!-- Totals -->
                             <tr class="bg-slate-800/30">
                                 <td class="py-6 font-bold text-white pl-4 border-l-4 border-transparent">LUCRO LÍQUIDO</td>
-                                <td class="py-6 text-right font-bold text-slate-400" id="fiatNet">R$ 4.150,00</td>
+                                <td class="py-6 text-right font-bold text-slate-400" id="fiatNet">R$ 3.850,00</td>
                                 <td class="py-6 text-right font-bold text-xl text-brand-usdt border-r-4 border-brand-usdt pr-4" id="cryptoNet">R$ 4.495,00</td>
                             </tr>
                         </tbody>
@@ -508,7 +510,10 @@
                 <div class="mt-6 flex justify-end">
                     <div class="bg-brand-usdt/10 border border-brand-usdt/20 px-6 py-4 rounded-lg inline-block text-right">
                         <p class="text-xs text-brand-usdt uppercase font-semibold">Diferença de Caixa</p>
-                        <p class="text-2xl font-bold text-white" id="differenceResult">+ R$ 345,00</p>
+                        <p class="text-2xl font-bold text-white" id="differenceResult">+ R$ 645,00</p>
+                        <p class="text-[10px] text-slate-400 mt-1 max-w-[200px] ml-auto">
+                            *Valor líquido total disponível. Ao contrário do Fiat, não há retenções imediatas na fonte.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -533,7 +538,9 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">Cold Storage</h4>
-                                <p class="text-sm text-slate-400 leading-relaxed">Seus fundos são armazenados em hardware desconectado da internet. Imune a ataques remotos.</p>
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    Seus fundos são armazenados em hardware desconectado da internet. Mesmo que o aparelho quebre, seu dinheiro está salvo na Blockchain e pode ser recuperado em qualquer outro dispositivo usando suas palavras-chave (Seed).
+                                </p>
                             </div>
                         </div>
                         <div class="flex gap-5">
@@ -542,7 +549,9 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">Custódia Soberana</h4>
-                                <p class="text-sm text-slate-400 leading-relaxed">"Not your keys, not your coins". Treinamos você para ser o único detentor das senhas de acesso.</p>
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    "Not your keys, not your coins". Treinamos você para ser o único detentor das senhas. O processo é simples e muito mais seguro do que depender da senha do banco.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -687,6 +696,68 @@
                         <p>Implementamos soluções de cartões corporativos "Crypto-to-Fiat". Você usa seu saldo em cripto, e o cartão converte instantaneamente para Reais no momento da compra, passando em qualquer maquininha Visa/Mastercard.</p>
                     </div>
                 </details>
+
+                <!-- Novas Perguntas -->
+                <details class="group bg-slate-900 border border-slate-800 rounded-lg">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-300 hover:text-white transition">
+                        <span>Preciso trocar meu sistema de contabilidade atual?</span>
+                        <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-400 px-5 pb-5 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        <p>Não. Nossa solução opera como uma camada paralela de recebimento. Fornecemos relatórios simplificados que seu contador pode anexar à contabilidade tradicional, mantendo tudo organizado sem mudar seu ERP.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-lg">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-300 hover:text-white transition">
+                        <span>E se meu funcionário tentar roubar as criptomoedas?</span>
+                        <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-400 px-5 pb-5 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        <p>O sistema de PDV que configuramos permite apenas <strong>recebimento</strong>. O acesso para enviar ou sacar fundos fica restrito à sua carteira principal (Cold Wallet), que só você tem a senha. Seu caixa não tem permissão de saque.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-lg">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-300 hover:text-white transition">
+                        <span>Como calculo o preço do produto em Bitcoin na hora da venda?</span>
+                        <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-400 px-5 pb-5 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        <p>Fornecemos ferramentas automatizadas (tablets ou integração) que convertem o valor em Reais para Crypto em tempo real, baseada na cotação do segundo. O funcionário digita 'R$ 50,00' e o sistema gera o QR Code correto automaticamente.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-lg">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-300 hover:text-white transition">
+                        <span>O governo consegue bloquear minha carteira?</span>
+                        <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-400 px-5 pb-5 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        <p>Não. Diferente de uma conta bancária, uma carteira de custódia própria (Self-Custody) não tem um 'gerente' ou entidade central. Os fundos estão na Blockchain e só podem ser movidos com a sua chave privada. É tecnicamente impossível um bloqueio judicial direto na carteira.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-lg">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-300 hover:text-white transition">
+                        <span>Existe custo mensal para manter o sistema?</span>
+                        <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-400 px-5 pb-5 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        <p>Diferente das maquininhas que cobram aluguel eterno, a infraestrutura Blockchain é livre. Você paga apenas taxas de rede (centavos) por transação. Nossa consultoria é um serviço de implementação e suporte, sem mensalidades abusivas sobre o seu faturamento.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-lg">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-300 hover:text-white transition">
+                        <span>Demora muito para o dinheiro cair na conta?</span>
+                        <span class="transition group-open:rotate-180 text-slate-500"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-400 px-5 pb-5 text-sm leading-relaxed border-t border-slate-800 pt-4">
+                        <p>A liquidação é imediata (D+0). No momento em que o cliente paga, o valor aparece na sua carteira em segundos (via Lightning Network ou redes rápidas de USDT). Adeus antecipação de recebíveis.</p>
+                    </div>
+                </details>
+
             </div>
         </div>
     </section>
@@ -754,7 +825,7 @@
             document.getElementById('discountDisplay').innerText = discountPercent + "%";
             document.getElementById('cryptoDiscountText').innerText = discountPercent + "%";
 
-            const taxRate = 0.12; 
+            const taxRate = 0.18; // Aumentado para refletir carga tributária total mais realista (18%)
             const cardFees = 0.05; 
             const networkFee = 5.00;
 
