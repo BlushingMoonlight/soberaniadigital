@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@
 
     <script>
         tailwind.config = {
+            darkMode: 'class', // Habilita modo escuro via classe
             theme: {
                 extend: {
                     colors: {
@@ -54,14 +55,30 @@
         body {
             background-color: #FFFFFF;
             color: #334155; 
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
+        /* Dark Mode Global Overrides */
+        .dark body {
+            background-color: #020617; /* Slate 950 bem escuro */
+            color: #94A3B8; /* Slate 400 */
+        }
+
         h1, h2, h3, h4 {
             color: #0F172A; 
             letter-spacing: -0.02em; 
+            transition: color 0.3s ease;
         }
 
-        /* Hero Background com Cristo Redentor */
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark .text-slate-900 {
+            color: #F8FAFC !important; /* Branco suave no dark mode */
+        }
+        
+        .dark .text-slate-500, .dark .text-slate-600, .dark .text-slate-700 {
+            color: #94A3B8 !important;
+        }
+
+        /* Hero Background com Cristo Redentor - Light Mode */
         .hero-bg {
             background-color: #FFFFFF;
             background-image: 
@@ -73,6 +90,18 @@
             background-size: cover;
             background-position: center 20%; 
             background-repeat: no-repeat;
+            transition: background-image 0.5s ease;
+        }
+
+        /* Hero Background - Dark Mode (Gradiente Escuro) */
+        .dark .hero-bg {
+            background-color: #020617;
+            background-image: 
+                linear-gradient(to right, 
+                    #020617 30%, 
+                    rgba(2, 6, 23, 0.95) 60%, 
+                    rgba(2, 6, 23, 0) 100%),
+                url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop');
         }
         
         @media (max-width: 768px) {
@@ -83,6 +112,14 @@
                         rgba(255, 255, 255, 0.95) 0%, 
                         rgba(255, 255, 255, 0.8) 50%,
                         rgba(255, 255, 255, 0.4) 100%),
+                    url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop');
+            }
+            .dark .hero-bg {
+                background-image: 
+                    linear-gradient(to bottom, 
+                        rgba(2, 6, 23, 0.95) 0%, 
+                        rgba(2, 6, 23, 0.9) 50%,
+                        rgba(2, 6, 23, 0.5) 100%),
                     url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop');
             }
         }
@@ -98,6 +135,13 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
         }
+        .dark .btn-primary {
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark .btn-primary:hover {
+            background-color: #E2E8F0;
+        }
 
         .btn-secondary {
             background-color: white;
@@ -108,6 +152,15 @@
         .btn-secondary:hover {
             border-color: #94A3B8;
             background-color: #F8FAFC;
+        }
+        .dark .btn-secondary {
+            background-color: transparent;
+            color: #F8FAFC;
+            border-color: #334155;
+        }
+        .dark .btn-secondary:hover {
+            background-color: #1E293B;
+            border-color: #94A3B8;
         }
 
         /* Cards */
@@ -123,9 +176,21 @@
             transform: translateY(-2px);
             border-color: #E2E8F0;
         }
+        .dark .clean-card {
+            background: #0F172A; /* Slate 900 */
+            border-color: #1E293B;
+            box-shadow: none;
+        }
+        .dark .clean-card:hover {
+            border-color: #334155;
+            background: #1E293B;
+        }
 
         .news-card {
             border-left: 4px solid #0F172A;
+        }
+        .dark .news-card {
+            border-left: 4px solid #F8FAFC;
         }
 
         /* Inputs */
@@ -142,6 +207,15 @@
             outline: none;
             box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.05);
         }
+        .dark .modern-input {
+            background-color: #1E293B; /* Slate 800 */
+            border-color: #334155;
+            color: #F8FAFC;
+        }
+        .dark .modern-input:focus {
+            background-color: #0F172A;
+            border-color: #94A3B8;
+        }
         
         details > summary {
             list-style: none;
@@ -154,6 +228,8 @@
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #F8FAFC; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+        .dark ::-webkit-scrollbar-track { background: #020617; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
         
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
@@ -206,6 +282,16 @@
             pointer-events: none; 
             border: 1px solid rgba(0,0,0,0.05); 
         }
+        .dark .whatsapp-tooltip {
+            background-color: #1E293B;
+            border-color: #334155;
+        }
+        .dark .whatsapp-tooltip p {
+            color: #F8FAFC !important;
+        }
+        .dark .whatsapp-tooltip::after {
+            border-top-color: #1E293B;
+        }
         .whatsapp-tooltip.show { 
             opacity: 1; 
             transform: translateY(0); 
@@ -226,34 +312,42 @@
 <body class="antialiased font-sans overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+    <nav class="fixed w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 md:h-20">
                 <div class="flex items-center gap-2">
-                    <span class="font-bold text-lg md:text-xl tracking-tight text-slate-900">Soberania<span class="text-slate-400 font-normal">Biz</span></span>
+                    <span class="font-bold text-lg md:text-xl tracking-tight text-slate-900 dark:text-white transition-colors">Soberania<span class="text-slate-400 font-normal">Biz</span></span>
                 </div>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#custo-zero" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition">Modelo Zero</a>
-                    <a href="#fiscal" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition">Fiscal</a>
-                    <a href="#dados" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition">Dados</a>
-                    <a href="#dre" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition">Simulador</a>
+                    <a href="#custo-zero" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Modelo Zero</a>
+                    <a href="#fiscal" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Fiscal</a>
+                    <a href="#dados" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Dados</a>
+                    <a href="#dre" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Simulador</a>
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
                     <a href="#contato" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">
                         Consultoria
                     </a>
                 </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="p-2 text-slate-400 hover:text-slate-900 focus:outline-none">
+                <div class="-mr-2 flex md:hidden items-center gap-4">
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white focus:outline-none">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="hidden md:hidden bg-white border-b border-slate-100" id="mobile-menu">
-            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
-                <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Modelo Zero</a>
-                <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Fiscal</a>
-                <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Dados</a>
-                <a href="#dre" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-slate-50">Simulador</a>
+        <div class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg dark:shadow-none">
+                <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Modelo Zero</a>
+                <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Fiscal</a>
+                <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Dados</a>
+                <a href="#dre" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Simulador</a>
                 <a href="#contato" class="block w-full text-center btn-primary mt-6 px-5 py-4 rounded-lg font-bold">Consultoria</a>
             </div>
         </div>
@@ -265,20 +359,20 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
                 <div class="max-w-3xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50/90 backdrop-blur-sm border border-slate-200 mb-6 md:mb-8 shadow-sm">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50/90 dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700 mb-6 md:mb-8 shadow-sm transition-colors">
                         <span class="flex h-2 w-2 relative">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                         </span>
-                        <span class="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-wide">Engenharia Financeira</span>
+                        <span class="text-[10px] md:text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Engenharia Financeira</span>
                     </div>
                     
                     <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 md:mb-8 leading-[1.1] tracking-tight text-slate-900 drop-shadow-sm">
                         Implemente uma <br>
-                        <span class="text-slate-500/90">Infraestrutura Paralela.</span>
+                        <span class="text-slate-500/90 dark:text-slate-400">Infraestrutura Paralela.</span>
                     </h1>
                     
-                    <p class="text-base md:text-xl text-slate-700 leading-relaxed max-w-2xl font-normal drop-shadow-sm bg-white/40 backdrop-blur-[2px] rounded-lg p-2 -ml-2">
+                    <p class="text-base md:text-xl text-slate-700 leading-relaxed max-w-2xl font-normal drop-shadow-sm bg-white/40 dark:bg-slate-800/40 backdrop-blur-[2px] rounded-lg p-2 -ml-2 transition-colors">
                         Atuamos como sua <strong>sócia de eficiência</strong>. Implementamos pagamentos em Dólar Digital (USDT) no seu negócio com <strong>custo zero de adesão</strong>. Nosso lucro é 100% alinhado ao seu sucesso: só ganhamos se você transacionar.
                     </p>
 
@@ -286,7 +380,7 @@
                         <a href="#contato" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-center shadow-lg">
                             Quero Consultoria Gratuita
                         </a>
-                        <a href="#fiscal" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium text-center flex items-center justify-center gap-2 bg-white/80 backdrop-blur">
+                        <a href="#fiscal" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium text-center flex items-center justify-center gap-2 bg-white/80 dark:bg-slate-900/50 backdrop-blur">
                             Ver a Lógica do Lucro <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
                         </a>
                     </div>
@@ -313,18 +407,18 @@
 
                 <!-- Floating Minimal Widget -->
                 <div class="hidden lg:block absolute top-20 right-0 w-[400px]">
-                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-fintech border border-slate-100 transform rotate-1 hover:rotate-0 transition duration-500">
+                    <div class="bg-white/95 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl shadow-fintech border border-slate-100 dark:border-slate-800 transform rotate-1 hover:rotate-0 transition duration-500">
                         <div class="flex justify-between items-start mb-4">
-                            <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-brand-usdt">
+                            <div class="w-10 h-10 bg-green-50 dark:bg-green-900/30 rounded-full flex items-center justify-center text-brand-usdt">
                                 <i class="fa-solid fa-arrow-down"></i>
                             </div>
-                            <span class="bg-slate-50 text-slate-500 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Confirmed</span>
+                            <span class="bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Confirmed</span>
                         </div>
                         <div class="space-y-1">
-                            <p class="text-sm text-slate-500 font-medium">Recebimento via Tether</p>
-                            <p class="text-3xl font-bold text-slate-900">+ 500,00 <span class="text-brand-usdt">USDT</span></p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Recebimento via Tether</p>
+                            <p class="text-3xl font-bold text-slate-900 dark:text-white">+ 500,00 <span class="text-brand-usdt">USDT</span></p>
                         </div>
-                        <div class="mt-6 flex items-center gap-2 text-xs text-slate-400">
+                        <div class="mt-6 flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
                             <i class="fa-brands fa-ethereum"></i>
                             <span class="font-mono">Smart Contract Verified</span>
                         </div>
@@ -335,13 +429,13 @@
     </header>
 
     <!-- NOVA SESSÃO: SKIN IN THE GAME / CUSTO ZERO -->
-    <section id="custo-zero" class="py-12 md:py-20 bg-slate-50 border-b border-slate-200">
+    <section id="custo-zero" class="py-12 md:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 px-3 py-1 rounded-full border border-green-100">Modelo de Sociedade</span>
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Modelo de Sociedade</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-slate-900">Risco Zero: "Skin in the Game"</h2>
                 <p class="text-slate-600 text-base md:text-lg leading-relaxed">
-                    Nós acreditamos tanto que o seu cliente prefere pagar menos e você prefere lucrar mais, que eliminamos as barreiras. <span class="font-bold text-slate-900">Assumimos o risco da implementação.</span>
+                    Nós acreditamos tanto que o seu cliente prefere pagar menos e você prefere lucrar mais, que eliminamos as barreiras. <span class="font-bold text-slate-900 dark:text-white">Assumimos o risco da implementação.</span>
                 </p>
             </div>
 
@@ -349,31 +443,31 @@
                 <!-- Card 1 -->
                 <div class="clean-card p-8 text-center relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-usdt to-brand-dark"></div>
-                    <div class="w-16 h-16 bg-slate-50 rounded-2xl mx-auto flex items-center justify-center text-brand-dark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mx-auto flex items-center justify-center text-brand-dark dark:text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-ban"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Setup Gratuito</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Consultoria, configuração de carteiras seguras e treinamento completo da equipe <strong class="text-slate-800">sem custo inicial</strong>. Não vendemos software, entregamos resultado.
+                        Consultoria, configuração de carteiras seguras e treinamento completo da equipe <strong class="text-slate-800 dark:text-slate-200">sem custo inicial</strong>. Não vendemos software, entregamos resultado.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="clean-card p-8 text-center relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-btc to-brand-usdt"></div>
-                    <div class="w-16 h-16 bg-slate-50 rounded-2xl mx-auto flex items-center justify-center text-brand-btc text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mx-auto flex items-center justify-center text-brand-btc text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-handshake"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Sucesso Compartilhado</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Somos sócios da eficiência. Nossa remuneração é uma taxa única de <strong class="text-slate-800">5% apenas sobre o volume transacionado</strong> via Smart Contract.
+                        Somos sócios da eficiência. Nossa remuneração é uma taxa única de <strong class="text-slate-800 dark:text-slate-200">5% apenas sobre o volume transacionado</strong> via Smart Contract.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="clean-card p-8 text-center relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-dark to-slate-500"></div>
-                    <div class="w-16 h-16 bg-slate-50 rounded-2xl mx-auto flex items-center justify-center text-brand-usdt text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mx-auto flex items-center justify-center text-brand-usdt text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Filosofia de Parceria</h3>
@@ -390,10 +484,10 @@
     </section>
 
     <!-- OTIMIZAÇÃO TRIBUTÁRIA (REFEITA) -->
-    <section id="fiscal" class="py-12 md:py-24 bg-white border-t border-slate-100">
+    <section id="fiscal" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-full border border-orange-100">Eficiência Legal</span>
+                <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Eficiência Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-4 text-slate-900">Otimização Tributária</h2>
                 <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
                     Transforme a carga tributária em vantagem competitiva. Operar com ativos digitais permite um planejamento fiscal inteligente e 100% legal.
@@ -405,7 +499,7 @@
                 <div class="space-y-8">
                     <!-- Item 1 -->
                     <div class="flex gap-5">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center text-xl shadow-lg">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center text-xl shadow-lg">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                         <div>
@@ -418,7 +512,7 @@
 
                     <!-- Item 2 -->
                     <div class="flex gap-5">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-usdt text-white flex items-center justify-center text-xl shadow-lg shadow-green-200">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-usdt text-white flex items-center justify-center text-xl shadow-lg shadow-green-200 dark:shadow-none">
                             <i class="fa-solid fa-clock-rotate-left"></i>
                         </div>
                         <div>
@@ -431,7 +525,7 @@
 
                     <!-- Item 3 -->
                     <div class="flex gap-5">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-white border border-slate-200 text-slate-900 flex items-center justify-center text-xl shadow-sm">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white flex items-center justify-center text-xl shadow-sm">
                             <i class="fa-solid fa-file-shield"></i>
                         </div>
                         <div>
@@ -446,43 +540,43 @@
                 <!-- Coluna Direita: Card de Ação -->
                 <div class="relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-brand-usdt to-brand-dark rounded-3xl blur opacity-20"></div>
-                    <div class="relative bg-white p-8 rounded-3xl border border-slate-100 shadow-xl">
+                    <div class="relative bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl transition-colors">
                         <div class="flex items-center justify-between mb-8">
                             <div>
-                                <h3 class="text-2xl font-bold text-slate-900">Consultoria Flash</h3>
-                                <p class="text-sm text-slate-500">Implementação em 48h</p>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Consultoria Flash</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Implementação em 48h</p>
                             </div>
-                            <div class="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-slate-900 font-bold">
+                            <div class="w-12 h-12 bg-slate-50 dark:bg-slate-700 rounded-full flex items-center justify-center text-slate-900 dark:text-white font-bold">
                                 48h
                             </div>
                         </div>
                         
                         <div class="space-y-4 mb-8">
-                            <div class="flex items-center p-3 bg-slate-50 rounded-xl">
+                            <div class="flex items-center p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl">
                                 <div class="w-2 h-2 rounded-full bg-brand-usdt mr-3"></div>
-                                <span class="text-sm font-medium text-slate-700">Configuração de Wallets Corporativas</span>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Configuração de Wallets Corporativas</span>
                             </div>
-                            <div class="flex items-center p-3 bg-slate-50 rounded-xl">
+                            <div class="flex items-center p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl">
                                 <div class="w-2 h-2 rounded-full bg-brand-usdt mr-3"></div>
-                                <span class="text-sm font-medium text-slate-700">Treinamento Contábil Básico</span>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Treinamento Contábil Básico</span>
                             </div>
-                            <div class="flex items-center p-3 bg-slate-50 rounded-xl">
+                            <div class="flex items-center p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl">
                                 <div class="w-2 h-2 rounded-full bg-brand-usdt mr-3"></div>
-                                <span class="text-sm font-medium text-slate-700">Integração com PDV Atual</span>
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Integração com PDV Atual</span>
                             </div>
                         </div>
 
                         <a href="#contato" class="block w-full text-center btn-primary py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                             Solicitar Proposta Gratuita
                         </a>
-                        <p class="text-center text-xs text-slate-400 mt-4">Sem compromisso financeiro inicial.</p>
+                        <p class="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">Sem compromisso financeiro inicial.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="dados" class="py-12 md:py-24 bg-slate-50 border-t border-slate-200">
+    <section id="dados" class="py-12 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
                 <h2 class="text-2xl md:text-3xl font-bold mb-4">Volume de Mercado</h2>
@@ -490,31 +584,31 @@
             </div>
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="space-y-4 md:space-y-8">
-                    <div class="clean-card p-4 md:p-6 flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-900 font-bold text-sm shrink-0">1</div><div><h4 class="font-bold text-slate-900 text-sm md:text-base">Liquidez Global</h4><p class="text-sm text-slate-500 mt-1">Mais de <strong>$160 Bilhões</strong> em circulação (USDT/USDC).</p></div></div>
-                    <div class="clean-card p-4 md:p-6 flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-900 font-bold text-sm shrink-0">2</div><div><h4 class="font-bold text-slate-900 text-sm md:text-base">Operação 24/7</h4><p class="text-sm text-slate-500 mt-1">Sem feriados bancários. Seu dinheiro não dorme.</p></div></div>
-                    <div class="clean-card p-4 md:p-6 flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-900 font-bold text-sm shrink-0">3</div><div><h4 class="font-bold text-slate-900 text-sm md:text-base">Adoção Institucional</h4><p class="text-sm text-slate-500 mt-1">Utilizado por BlackRock, Visa e Governos.</p></div></div>
+                    <div class="clean-card p-4 md:p-6 flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center text-slate-900 dark:text-white font-bold text-sm shrink-0">1</div><div><h4 class="font-bold text-slate-900 text-sm md:text-base">Liquidez Global</h4><p class="text-sm text-slate-500 mt-1">Mais de <strong>$160 Bilhões</strong> em circulação (USDT/USDC).</p></div></div>
+                    <div class="clean-card p-4 md:p-6 flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center text-slate-900 dark:text-white font-bold text-sm shrink-0">2</div><div><h4 class="font-bold text-slate-900 text-sm md:text-base">Operação 24/7</h4><p class="text-sm text-slate-500 mt-1">Sem feriados bancários. Seu dinheiro não dorme.</p></div></div>
+                    <div class="clean-card p-4 md:p-6 flex items-start gap-4"><div class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center text-slate-900 dark:text-white font-bold text-sm shrink-0">3</div><div><h4 class="font-bold text-slate-900 text-sm md:text-base">Adoção Institucional</h4><p class="text-sm text-slate-500 mt-1">Utilizado por BlackRock, Visa e Governos.</p></div></div>
                 </div>
-                <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <div class="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm transition-colors">
                     <h3 class="text-xs font-bold text-slate-400 uppercase mb-6 md:mb-8 tracking-wider">Volume de Liquidação Anual</h3>
                     <div class="space-y-6 md:space-y-8">
-                        <div><div class="flex justify-between text-sm mb-2 text-slate-600 font-medium"><span>Visa</span></div><div class="h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-slate-400 w-[95%]"></div></div></div>
-                        <div><div class="flex justify-between text-sm mb-2"><span class="font-bold text-slate-900">Stablecoins</span><span class="text-brand-usdt text-xs font-bold bg-green-50 px-2 py-0.5 rounded">Crescimento Exponencial</span></div><div class="h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-brand-usdt w-[90%]"></div></div></div>
-                        <div><div class="flex justify-between text-sm mb-2 text-slate-600 font-medium"><span>Mastercard</span></div><div class="h-2 w-full bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-slate-400 w-[60%]"></div></div></div>
+                        <div><div class="flex justify-between text-sm mb-2 text-slate-600 dark:text-slate-400 font-medium"><span>Visa</span></div><div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-slate-400 w-[95%]"></div></div></div>
+                        <div><div class="flex justify-between text-sm mb-2"><span class="font-bold text-slate-900 dark:text-white">Stablecoins</span><span class="text-brand-usdt text-xs font-bold bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded">Crescimento Exponencial</span></div><div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-brand-usdt w-[90%]"></div></div></div>
+                        <div><div class="flex justify-between text-sm mb-2 text-slate-600 dark:text-slate-400 font-medium"><span>Mastercard</span></div><div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-slate-400 w-[60%]"></div></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="midia" class="py-12 md:py-24 bg-white border-y border-slate-100 overflow-hidden">
+    <section id="midia" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 overflow-hidden transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-10 md:mb-16">
-                <span class="text-brand-btc text-[10px] md:text-xs font-bold uppercase tracking-wider bg-orange-50 px-3 py-1 rounded-full border border-orange-100">Reconhecimento Institucional</span>
+                <span class="text-brand-btc text-[10px] md:text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Reconhecimento Institucional</span>
                 <h2 class="text-2xl md:text-3xl font-bold mt-4 text-slate-900">O Que a Mídia Global Diz</h2>
                 <p class="text-slate-500 mt-2 text-sm md:text-base">Acompanhe as últimas tendências do mercado financeiro digital.</p>
             </div>
             <div id="news-loading" class="text-center py-12 flex flex-col items-center justify-center">
-                <i class="fa-solid fa-circle-notch fa-spin text-3xl text-slate-300 mb-4"></i>
+                <i class="fa-solid fa-circle-notch fa-spin text-3xl text-slate-300"></i>
                 <p class="text-slate-500 font-medium animate-pulse text-sm">Buscando as melhores notícias para você...</p>
                 <div class="flex gap-2 mt-2">
                     <span class="w-1.5 h-1.5 bg-slate-300 rounded-full animate-bounce" style="animation-delay: 0s"></span>
@@ -527,49 +621,49 @@
         </div>
     </section>
 
-    <section class="py-12 md:py-24 bg-slate-50 border-y border-slate-200">
+    <section class="py-12 md:py-24 bg-slate-50 dark:bg-slate-950 border-y border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-8 md:mb-12">
-                <span class="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100">Alerta de Inflação</span>
+                <span class="text-xs font-bold text-red-500 uppercase tracking-widest bg-red-50 dark:bg-red-900/20 px-3 py-1 rounded-full border border-red-100 dark:border-red-900/30">Alerta de Inflação</span>
                 <h2 class="text-2xl md:text-3xl font-bold mt-4 mb-4 text-slate-900">O Futuro do seu Dinheiro</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Visualização do poder de compra de <span class="font-bold text-slate-700">1.000 Unidades Monetárias</span> ao longo do tempo. Enquanto o Dólar mantém sua estabilidade, o Real sofre com a desvalorização exponencial.</p>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Visualização do poder de compra de <span class="font-bold text-slate-700 dark:text-slate-300">1.000 Unidades Monetárias</span> ao longo do tempo. Enquanto o Dólar mantém sua estabilidade, o Real sofre com a desvalorização exponencial.</p>
             </div>
-            <div class="bg-white border border-slate-100 p-6 md:p-12 rounded-3xl shadow-sm relative">
+            <div class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 md:p-12 rounded-3xl shadow-sm relative transition-colors">
                 <div class="absolute top-6 left-6 md:left-12 z-10"><p class="text-xs font-bold text-slate-400 uppercase">Poder de Compra (Basket)</p></div>
                 <div class="overflow-x-auto pb-4 hide-scroll">
-                    <div class="flex justify-between items-end h-64 md:h-80 px-2 min-w-[600px] border-b border-slate-100 relative">
-                        <div class="absolute inset-0 w-full h-full pointer-events-none"><div class="border-t border-slate-50 h-1/4 w-full"></div><div class="border-t border-slate-50 h-1/4 w-full"></div><div class="border-t border-slate-50 h-1/4 w-full"></div></div>
+                    <div class="flex justify-between items-end h-64 md:h-80 px-2 min-w-[600px] border-b border-slate-100 dark:border-slate-800 relative">
+                        <div class="absolute inset-0 w-full h-full pointer-events-none"><div class="border-t border-slate-50 dark:border-slate-800 h-1/4 w-full"></div><div class="border-t border-slate-50 dark:border-slate-800 h-1/4 w-full"></div><div class="border-t border-slate-50 dark:border-slate-800 h-1/4 w-full"></div></div>
                         <div class="w-20 flex flex-col justify-end gap-2 h-full group relative">
                             <div class="text-center mb-1 opacity-0 group-hover:opacity-100 transition text-[10px] text-slate-400 absolute -top-8 w-full">Início</div>
                             <div class="w-full bg-brand-usdt h-[90%] rounded-t-sm opacity-90 relative flex justify-center"><span class="text-[10px] text-white font-bold mt-2 hidden md:block">$1k</span></div>
                             <div class="w-full bg-red-200 h-[85%] rounded-t-sm relative flex justify-center"><span class="text-[10px] text-red-800 font-bold mt-2 hidden md:block">R$1k</span></div>
-                            <span class="text-xs text-slate-400 font-medium text-center mt-2 bg-slate-50 rounded py-1">2014</span>
+                            <span class="text-xs text-slate-400 font-medium text-center mt-2 bg-slate-50 dark:bg-slate-800 rounded py-1">2014</span>
                         </div>
                         <div class="w-20 flex flex-col justify-end gap-2 h-full group">
                             <div class="w-full bg-brand-usdt h-[82%] rounded-t-sm opacity-90 relative flex justify-center"></div>
                             <div class="w-full bg-red-300 h-[55%] rounded-t-sm relative flex justify-center"></div>
-                            <span class="text-xs text-slate-400 font-medium text-center mt-2 bg-slate-50 rounded py-1">2019</span>
+                            <span class="text-xs text-slate-400 font-medium text-center mt-2 bg-slate-50 dark:bg-slate-800 rounded py-1">2019</span>
                         </div>
                         <div class="w-24 flex flex-col justify-end gap-2 h-full relative z-10">
-                            <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] px-2 py-1 rounded shadow-lg whitespace-nowrap">Você está aqui<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div></div>
+                            <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-white dark:text-slate-900 text-white text-[10px] px-2 py-1 rounded shadow-lg whitespace-nowrap">Você está aqui<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 dark:bg-white rotate-45"></div></div>
                             <div class="w-full bg-brand-usdt h-[74%] rounded-t-md shadow-[0_0_15px_rgba(16,185,129,0.3)] relative flex justify-center items-start pt-2"><span class="text-xs text-white font-bold">$980</span></div>
                             <div class="w-full bg-red-500 h-[35%] rounded-t-md relative flex justify-center items-start pt-2"><span class="text-xs text-white font-bold">R$350</span></div>
-                            <span class="text-xs text-slate-900 font-black text-center mt-2 uppercase tracking-wider">Hoje</span>
+                            <span class="text-xs text-slate-900 dark:text-white font-black text-center mt-2 uppercase tracking-wider">Hoje</span>
                         </div>
                         <div class="w-20 flex flex-col justify-end gap-2 h-full opacity-70 group">
                             <div class="w-full bg-brand-usdt h-[68%] rounded-t-sm opacity-90 relative border-t-2 border-dashed border-white/50 flex justify-center"><span class="text-[9px] text-white pt-1 font-bold hidden md:block">$910</span></div>
                             <div class="w-full bg-red-400 h-[20%] rounded-t-sm relative border-t-2 border-dashed border-white/50 flex justify-center items-start pt-1"><span class="text-[10px] text-white font-bold">R$190</span></div>
-                            <span class="text-xs text-slate-400 font-medium text-center mt-2 border border-slate-100 rounded py-1 bg-slate-50/50">2029*</span>
+                            <span class="text-xs text-slate-400 font-medium text-center mt-2 border border-slate-100 dark:border-slate-700 rounded py-1 bg-slate-50/50 dark:bg-slate-800/50">2029*</span>
                         </div>
                         <div class="w-20 flex flex-col justify-end gap-2 h-full opacity-50 group">
                             <div class="w-full bg-brand-usdt h-[62%] rounded-t-sm opacity-90 relative border-t-2 border-dashed border-white/50 flex justify-center"><span class="text-[9px] text-white pt-1 font-bold hidden md:block">$840</span></div>
                             <div class="w-full bg-red-400 h-[12%] rounded-t-sm relative border-t-2 border-dashed border-white/50 flex justify-center items-start pt-1"><span class="text-[10px] text-white font-bold">R$115</span></div>
-                            <span class="text-xs text-slate-400 font-medium text-center mt-2 border border-slate-100 rounded py-1 bg-slate-50/50">2034*</span>
+                            <span class="text-xs text-slate-400 font-medium text-center mt-2 border border-slate-100 dark:border-slate-700 rounded py-1 bg-slate-50/50 dark:bg-slate-800/50">2034*</span>
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row justify-between items-center mt-8 gap-4">
-                    <div class="flex gap-6 text-sm font-medium"><div class="flex items-center gap-2"><span class="w-3 h-3 bg-brand-usdt rounded-sm"></span> <span class="text-slate-600">Dólar (Reserva)</span></div><div class="flex items-center gap-2"><span class="w-3 h-3 bg-red-400 rounded-sm"></span> <span class="text-slate-600">Real (Derretimento)</span></div></div>
+                    <div class="flex gap-6 text-sm font-medium"><div class="flex items-center gap-2"><span class="w-3 h-3 bg-brand-usdt rounded-sm"></span> <span class="text-slate-600 dark:text-slate-400">Dólar (Reserva)</span></div><div class="flex items-center gap-2"><span class="w-3 h-3 bg-red-400 rounded-sm"></span> <span class="text-slate-600 dark:text-slate-400">Real (Derretimento)</span></div></div>
                     <p class="text-[10px] text-slate-400 italic max-w-md text-center md:text-right">*Projeção baseada na média histórica do IPCA acumulado e desvalorização cambial dos últimos 10 anos.</p>
                 </div>
             </div>
@@ -577,47 +671,47 @@
     </section>
 
     <!-- ETAPAS DE IMPLEMENTAÇÃO (ATUALIZADA) -->
-    <section id="seguranca-processo" class="py-12 md:py-24 bg-white">
+    <section id="seguranca-processo" class="py-12 md:py-24 bg-white dark:bg-slate-900 transition-colors">
          <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 md:gap-16">
                 <div>
                      <div class="mb-6 md:mb-8"><span class="text-brand-btc text-xs font-bold uppercase tracking-wider">Infraestrutura</span><h2 class="text-2xl md:text-3xl font-bold mt-2 text-slate-900">Segurança "Bank-Grade"</h2></div>
                     <div class="space-y-6">
-                        <div class="clean-card p-5 md:p-6 flex gap-4"><div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0"><i class="fa-solid fa-snowflake"></i></div><div><h4 class="font-bold text-slate-900">Cold Storage</h4><p class="text-sm text-slate-500 mt-1 leading-relaxed">Seus fundos desconectados da internet. Imune a ataques remotos e falhas de hardware (recuperável via Seed).</p></div></div>
-                         <div class="clean-card p-5 md:p-6 flex gap-4"><div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 shrink-0"><i class="fa-solid fa-key"></i></div><div><h4 class="font-bold text-slate-900">Custódia Soberana</h4><p class="text-sm text-slate-500 mt-1 leading-relaxed">"Not your keys, not your coins". Você é o único detentor das senhas. Mais seguro que depender do banco.</p></div></div>
+                        <div class="clean-card p-5 md:p-6 flex gap-4"><div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0"><i class="fa-solid fa-snowflake"></i></div><div><h4 class="font-bold text-slate-900">Cold Storage</h4><p class="text-sm text-slate-500 mt-1 leading-relaxed">Seus fundos desconectados da internet. Imune a ataques remotos e falhas de hardware (recuperável via Seed).</p></div></div>
+                         <div class="clean-card p-5 md:p-6 flex gap-4"><div class="w-10 h-10 rounded-full bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center text-yellow-600 dark:text-yellow-400 shrink-0"><i class="fa-solid fa-key"></i></div><div><h4 class="font-bold text-slate-900">Custódia Soberana</h4><p class="text-sm text-slate-500 mt-1 leading-relaxed">"Not your keys, not your coins". Você é o único detentor das senhas. Mais seguro que depender do banco.</p></div></div>
                     </div>
                 </div>
                 <!-- NOVA LISTA DE ETAPAS BASEADA NO DOC -->
                 <div>
                     <div class="mb-6 md:mb-8"><span class="text-brand-usdt text-xs font-bold uppercase tracking-wider">Metodologia 360°</span><h2 class="text-2xl md:text-3xl font-bold mt-2 text-slate-900">Como funciona?</h2></div>
-                    <div class="border-l-2 border-slate-200 pl-6 md:pl-8 space-y-10 md:space-y-10 ml-4">
+                    <div class="border-l-2 border-slate-200 dark:border-slate-700 pl-6 md:pl-8 space-y-10 md:space-y-10 ml-4">
                         
                         <div class="relative">
-                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white border-4 border-slate-300 shadow-sm z-10"></span>
+                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-300 dark:border-slate-600 shadow-sm z-10"></span>
                             <h4 class="font-bold text-slate-900 text-base md:text-lg">1. Infraestrutura de Custódia</h4>
                             <p class="text-sm text-slate-500 mt-2">Criamos suas carteiras (Hot & Cold) e ensinamos a proteger as chaves privadas com segurança bancária.</p>
                         </div>
 
                         <div class="relative">
-                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white border-4 border-slate-400 shadow-sm z-10"></span>
+                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 border-slate-400 dark:border-slate-500 shadow-sm z-10"></span>
                             <h4 class="font-bold text-slate-900 text-base md:text-lg">2. Educação de Liquidez (Saída)</h4>
                             <p class="text-sm text-slate-500 mt-2">Ensinamos a converter o lucro para Reais via P2P ou usar cartões internacionais para gastar sem passar por bancos.</p>
                         </div>
 
                         <div class="relative">
-                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white border-4 border-brand-usdt shadow-sm z-10"></span>
+                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 border-brand-usdt shadow-sm z-10"></span>
                             <h4 class="font-bold text-slate-900 text-base md:text-lg">3. Setup de PDV</h4>
                             <p class="text-sm text-slate-500 mt-2">Instalação e configuração de QR Codes no caixa com sistema de conferência instantânea.</p>
                         </div>
 
                         <div class="relative">
-                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white border-4 border-brand-btc shadow-sm z-10"></span>
+                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 border-brand-btc shadow-sm z-10"></span>
                             <h4 class="font-bold text-slate-900 text-base md:text-lg">4. Onboarding de Clientes</h4>
                             <p class="text-sm text-slate-500 mt-2">Treinamos sua equipe para converter vendas no balcão, ajudando o cliente a baixar o app e pagar.</p>
                         </div>
 
                         <div class="relative">
-                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white border-4 border-brand-dark shadow-sm z-10"></span>
+                            <span class="absolute -left-[35px] md:-left-[43px] top-1 w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 border-brand-dark dark:border-slate-400 shadow-sm z-10"></span>
                             <h4 class="font-bold text-slate-900 text-base md:text-lg">5. Simulação Real</h4>
                             <p class="text-sm text-slate-500 mt-2">Testes práticos de pagamento e validação da divisão automática de performance via Smart Contract.</p>
                         </div>
@@ -627,13 +721,13 @@
          </div>
     </section>
 
-    <section id="sobre" class="py-12 md:py-24 bg-slate-50 border-t border-slate-200">
+    <section id="sobre" class="py-12 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
              <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
                 <div>
                      <span class="text-brand-btc text-xs font-bold uppercase tracking-wider mb-2 block">Quem Somos</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Engenharia Financeira <br> <span class="text-slate-400">Descentralizada</span></h2>
-                    <div class="prose prose-slate text-slate-600 text-base md:text-lg leading-relaxed">
+                    <div class="prose prose-slate text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
                         <p class="mb-4">A <strong>SoberaniaBiz</strong> não é apenas uma empresa de tecnologia. Somos uma consultoria estratégica focada em libertar negócios da ineficiência estatal e bancária.</p>
                         <p class="mb-6">Nossa missão é implementar uma infraestrutura paralela onde sua empresa opera com <strong>Bitcoin e Dólar Digital (USDT)</strong>.</p>
                         <ul class="space-y-3 list-none pl-0 text-sm md:text-base">
@@ -643,24 +737,262 @@
                         </ul>
                     </div>
                 </div>
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-fintech border border-slate-100">
-                     <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">Para quem é este serviço?</h3>
+                <div class="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-fintech border border-slate-100 dark:border-slate-800 transition-colors">
+                     <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">Para quem é este serviço?</h3>
                      <div class="space-y-6">
-                        <div class="flex gap-4 items-start"><div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-900 shrink-0 border border-slate-100"><i class="fa-solid fa-store"></i></div><div><h4 class="text-slate-900 font-bold">Varejo & Comércio</h4><p class="text-sm text-slate-500 mt-1">Lojas físicas com margens apertadas.</p></div></div>
-                        <div class="flex gap-4 items-start"><div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-blue-600 shrink-0 border border-slate-100"><i class="fa-solid fa-user-doctor"></i></div><div><h4 class="text-slate-900 font-bold">Prestadores de Serviço</h4><p class="text-sm text-slate-500 mt-1">Médicos, Dentistas, Arquitetos, Engenheiros.</p></div></div>
-                        <div class="flex gap-4 items-start"><div class="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-600 shrink-0 border border-slate-100"><i class="fa-solid fa-industry"></i></div><div><h4 class="text-slate-900 font-bold">Indústria</h4><p class="text-sm text-slate-500 mt-1">Agilidade em pagamentos internacionais.</p></div></div>
+                        <div class="flex gap-4 items-start"><div class="w-10 h-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white shrink-0 border border-slate-100 dark:border-slate-700"><i class="fa-solid fa-store"></i></div><div><h4 class="text-slate-900 font-bold">Varejo & Comércio</h4><p class="text-sm text-slate-500 mt-1">Lojas físicas com margens apertadas.</p></div></div>
+                        <div class="flex gap-4 items-start"><div class="w-10 h-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 border border-slate-100 dark:border-slate-700"><i class="fa-solid fa-user-doctor"></i></div><div><h4 class="text-slate-900 font-bold">Prestadores de Serviço</h4><p class="text-sm text-slate-500 mt-1">Médicos, Dentistas, Arquitetos, Engenheiros.</p></div></div>
+                        <div class="flex gap-4 items-start"><div class="w-10 h-10 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 shrink-0 border border-slate-100 dark:border-slate-700"><i class="fa-solid fa-industry"></i></div><div><h4 class="text-slate-900 font-bold">Indústria</h4><p class="text-sm text-slate-500 mt-1">Agilidade em pagamentos internacionais.</p></div></div>
                      </div>
                 </div>
              </div>
         </div>
     </section>
 
-    <section class="py-12 md:py-24 bg-white">
+    <!-- NOVA SESSÃO: USABILIDADE DO SALDO (LIQUIDEZ) -->
+    <section id="usabilidade" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+             <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Poder de Compra</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900">Seu Dinheiro, <span class="text-slate-400">Sem Fronteiras.</span></h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    Muitos perguntam: <em>"Ok, recebi em Dólar Digital, e agora?"</em>. A resposta é simples: você tem mais liberdade do que com o dinheiro no banco.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Cartões -->
+                <div class="group clean-card p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cartões Internacionais</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Carregue cartões (como Binance Card ou Nexo) instantaneamente. Use seu saldo para pagar fornecedores, almoços ou viagens em qualquer lugar que aceite Mastercard/Visa.
+                    </p>
+                </div>
+
+                <!-- Card 2: P2P -->
+                <div class="group clean-card p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    <div class="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center text-brand-usdt text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users-rays"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Conversão P2P</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Precisa de Reais em espécie? Ensinamos a realizar trocas Peer-to-Peer (P2P) ou via plataformas descentralizadas (como HodlHodl), garantindo privacidade total na saída.
+                    </p>
+                </div>
+
+                <!-- Card 3: Reserva -->
+                <div class="group clean-card p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    <div class="w-14 h-14 bg-orange-50 dark:bg-orange-900/20 rounded-2xl flex items-center justify-center text-brand-btc text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Proteção de Caixa</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                        Não gaste tudo. Mantenha parte do lucro em USDT ou Bitcoin. Enquanto o Real desvaloriza, seu caixa empresarial se torna uma reserva de valor global imune à inflação.
+                    </p>
+                </div>
+            </div>
+            
+             <!-- BOX AZUL ESCURO "Liberdade de Verdade" -->
+             <div class="mt-12 bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden transition-colors">
+                <div class="absolute top-0 right-0 opacity-10 text-9xl text-white transform translate-x-1/4 -translate-y-1/4 pointer-events-none">
+                    <i class="fa-brands fa-bitcoin"></i>
+                </div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-white max-w-xl">
+                        <h3 class="text-2xl font-bold mb-2">Liberdade de Verdade</h3>
+                        <p class="text-slate-300">Você não precisa pedir permissão ao gerente do banco para usar seu próprio dinheiro. Ensinamos cada etapa desse processo na consultoria.</p>
+                    </div>
+                    <a href="#contato" class="btn-secondary px-8 py-4 rounded-xl font-bold whitespace-nowrap bg-white text-slate-900 hover:bg-slate-100 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-950 border-none shadow-lg">
+                        Quero Aprender
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SESSÃO: EDUCAÇÃO DO CLIENTE (ONBOARDING) -->
+    <section id="cliente-educacao" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Adoção Simplificada</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900">E para o seu cliente? <span class="text-slate-400">É simples.</span></h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    Seus clientes já enfrentam filas e burocracia para fazer cartões de loja em troca de 5% de desconto. Com o <strong>Dólar Digital</strong>, eles ganham descontos maiores (10% a 20%) instalando um app em 5 minutos.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Passo a Passo Cliente -->
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center text-slate-900 dark:text-white font-bold text-xl">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900">Baixar & Criar Conta</h4>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">O cliente baixa o app de uma Exchange confiável (como Binance ou Coinbase). O cadastro é rápido, validado por IA em minutos.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center text-slate-900 dark:text-white font-bold text-xl">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900">Pix para Stablecoin</h4>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">Ele faz um Pix instantâneo para o app e converte para USDT (Dólar) com um clique. O dinheiro vira moeda forte.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-usdt text-white shadow-lg shadow-green-200 dark:shadow-none flex items-center justify-center font-bold text-xl">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900">Pagamento & Desconto</h4>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">Ele escaneia seu QR Code no balcão e envia. Você recebe na hora, sem taxas, e ele ganha o desconto do spread.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards das Exchanges -->
+                <div class="grid gap-6">
+                    <!-- Binance Card -->
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300 group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <!-- Binance Logo SVG -->
+                            <div class="w-12 h-12 flex items-center justify-center bg-[#F0B90B]/10 rounded-xl">
+                                <svg class="w-8 h-8 text-[#F0B90B]" viewBox="0 0 32 32" fill="currentColor">
+                                    <path d="M16 0l6 6-6 6-6-6 6-6zM6 10l6 6-6 6-6-6 6-6zM26 10l6 6-6 6-6-6 6-6zM16 20l6 6-6 6-6-6 6-6zM10.5 16l5.5 5.5 5.5-5.5-5.5-5.5-5.5 5.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Binance</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Maior Exchange Global</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">A plataforma mais popular do mundo. Ideal para quem busca liquidez máxima e funcionalidades avançadas de conversão P2P.</p>
+                        <div class="flex gap-3">
+                            <a href="https://apps.apple.com/us/app/binance-buy-bitcoin-crypto/id1436799971" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-apple text-base"></i> App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.binance.dev" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-google-play text-base"></i> Android
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Coinbase Card -->
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300 group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <!-- Coinbase Logo SVG -->
+                            <div class="w-12 h-12 flex items-center justify-center bg-[#0052FF]/10 rounded-xl">
+                                <svg class="w-8 h-8 text-[#0052FF]" viewBox="0 0 32 32" fill="currentColor">
+                                    <path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm-5.714-9.524h11.428c1.571 0 2.857-1.286 2.857-2.857v-7.143c0-1.571-1.286-2.857-2.857-2.857H10.286c-1.571 0-2.857 1.286-2.857 2.857v7.143c0 1.571 1.286 2.857 2.857 2.857z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Coinbase</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Padrão Institucional</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Listada na bolsa americana (Nasdaq), oferece a interface mais simples e didática para iniciantes comprarem seu primeiro Crypto.</p>
+                        <div class="flex gap-3">
+                            <a href="https://apps.apple.com/us/app/coinbase-buy-bitcoin-ether/id886427730" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-apple text-base"></i> App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.coinbase.android" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-google-play text-base"></i> Android
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DRE SECTION (CORRIGIDA) -->
+    <section id="dre" class="py-12 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-4xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-8 md:mb-12"><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Demonstrativo de Resultado</h2><p class="text-slate-500 mt-2 text-sm md:text-base">Comparativo financeiro direto e transparente.</p></div>
+            <div class="bg-white dark:bg-slate-900 p-4 md:p-12 rounded-3xl shadow-fintech border border-slate-100 dark:border-slate-800 transition-colors">
+                
+                <!-- Inputs Superiores -->
+                <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Valor da Venda</label>
+                        <input type="text" id="vendaInput" value="R$ 10.000,00" class="modern-input w-full px-4 py-3 text-base md:text-lg font-semibold" oninput="formatCurrencyInput(this); updateDRE()">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Desconto Incentivo ao Cliente (<span id="discountDisplay" class="text-brand-btc">5%</span>)</label>
+                        <input type="range" id="discountRange" min="0" max="20" value="5" class="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-dark" oninput="updateDRE()">
+                    </div>
+                </div>
+
+                <!-- Inputs de Taxas (Personalizáveis) -->
+                <div class="grid grid-cols-2 gap-4 md:gap-8 mb-8 pt-4 border-t border-slate-100 dark:border-slate-800">
+                    <div>
+                        <label class="block text-[10px] md:text-xs font-bold text-slate-400 uppercase mb-2">Seus Impostos Totais (%)</label>
+                        <div class="relative">
+                            <input type="number" id="taxInput" value="28" class="modern-input w-full px-4 py-2 text-sm font-medium pr-8" oninput="updateDRE()">
+                            <span class="absolute right-3 top-2 text-slate-400 text-sm">%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] md:text-xs font-bold text-slate-400 uppercase mb-2">Sua Taxa de Maquininha (%)</label>
+                        <div class="relative">
+                            <input type="number" id="cardFeeInput" value="3" class="modern-input w-full px-4 py-2 text-sm font-medium pr-8" oninput="updateDRE()">
+                            <span class="absolute right-3 top-2 text-slate-400 text-sm">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-100 dark:border-slate-800">
+                    <table class="w-full text-left min-w-[300px]">
+                        <thead class="bg-slate-50 dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700"><tr><th class="py-3 px-3 md:py-4 md:px-6 text-[10px] md:text-xs font-bold text-slate-400 uppercase">Descrição</th><th class="py-3 px-3 md:py-4 md:px-6 text-[10px] md:text-xs font-bold text-right text-slate-400 uppercase">Modelo Bancário</th><th class="py-3 px-3 md:py-4 md:px-6 text-[10px] md:text-xs font-bold text-right text-brand-dark dark:text-brand-usdt uppercase">Modelo SoberaniaBiz</th></tr></thead>
+                        <tbody class="text-xs md:text-sm font-mono text-slate-600 dark:text-slate-400">
+                            <tr class="border-b border-slate-50 dark:border-slate-800"><td class="py-3 px-3 md:py-4 md:px-6 font-sans">Valor Recebido</td><td class="py-3 px-3 md:py-4 md:px-6 text-right" id="fiatPrice">R$ 10.000,00</td><td class="py-3 px-3 md:py-4 md:px-6 text-right font-bold text-slate-900 dark:text-white" id="cryptoPrice">R$ 9.500,00</td></tr>
+                            
+                            <!-- Linha Impostos -->
+                            <tr class="border-b border-slate-50 dark:border-slate-800">
+                                <td class="py-3 px-3 md:py-4 md:px-6 font-sans flex items-center gap-2">
+                                    Impostos
+                                    <span class="text-[10px] bg-red-50 dark:bg-red-900/30 text-red-500 dark:text-red-400 px-1.5 py-0.5 rounded font-bold" id="taxDisplay">28%</span>
+                                </td>
+                                <td class="py-3 px-3 md:py-4 md:px-6 text-right text-red-500 dark:text-red-400" id="fiatTaxCost">- R$ 2.800,00</td>
+                                <td class="py-3 px-3 md:py-4 md:px-6 text-right text-slate-400 dark:text-slate-600">R$ 0,00</td>
+                            </tr>
+
+                            <!-- Linha Taxa Maquininha -->
+                            <tr class="border-b border-slate-50 dark:border-slate-800">
+                                <td class="py-3 px-3 md:py-4 md:px-6 font-sans flex items-center gap-2">
+                                    Taxa Maquininha
+                                    <span class="text-[10px] bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 px-1.5 py-0.5 rounded font-bold" id="cardFeeDisplay">3%</span>
+                                </td>
+                                <td class="py-3 px-3 md:py-4 md:px-6 text-right text-red-400 dark:text-red-300" id="fiatCardCost">- R$ 300,00</td>
+                                <td class="py-3 px-3 md:py-4 md:px-6 text-right text-slate-400 dark:text-slate-600">R$ 0,00</td>
+                            </tr>
+
+                            <!-- Linha Taxa Soberania -->
+                            <tr class="border-b border-slate-50 dark:border-slate-800"><td class="py-3 px-3 md:py-4 md:px-6 font-sans">Taxa SoberaniaBiz (5%)</td><td class="py-3 px-3 md:py-4 md:px-6 text-right text-slate-400 dark:text-slate-600">R$ 0,00</td><td class="py-3 px-3 md:py-4 md:px-6 text-right text-red-500 dark:text-red-400" id="soberaniaFee">- R$ 475,00</td></tr>
+                            
+                            <tr class="bg-slate-50/50 dark:bg-slate-800/50"><td class="py-4 px-3 md:py-5 md:px-6 font-bold text-slate-900 dark:text-white font-sans">LUCRO LÍQUIDO</td><td class="py-4 px-3 md:py-5 md:px-6 text-right font-bold" id="fiatNet">R$ 6.900,00</td><td class="py-4 px-3 md:py-5 md:px-6 text-right font-bold text-base md:text-xl text-brand-usdt" id="cryptoNet">R$ 9.025,00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6 md:mt-8 text-right">
+                    <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase mb-1">Diferença de Caixa</p>
+                    <p class="text-2xl md:text-3xl font-bold text-brand-dark dark:text-white" id="differenceResult">+ R$ 2.125,00</p>
+                    <p class="text-[10px] text-slate-400 mt-2">*Taxa SoberaniaBiz descontada automaticamente via Smart Contract.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (ATUALIZADA) -->
+    <section class="py-12 md:py-24 bg-white dark:bg-slate-900 transition-colors">
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-10 text-center">Perguntas Frequentes</h2>
             <div class="space-y-4">
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>Minha empresa só vai aceitar Bitcoin?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -670,7 +1002,7 @@
                 </details>
 
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>E se o valor da cripto cair (Volatilidade)?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -680,7 +1012,7 @@
                 </details>
 
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>Quanto custa para implementar o sistema?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -690,7 +1022,7 @@
                 </details>
 
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>É difícil para meus funcionários operarem?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -700,7 +1032,7 @@
                 </details>
 
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>Como eu uso esse dinheiro no mundo real?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -710,7 +1042,7 @@
                 </details>
 
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>É legal receber em Cripto no Brasil?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -720,7 +1052,7 @@
                 </details>
                 
                 <details class="group clean-card p-0">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 transition rounded-t-2xl text-sm md:text-base">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base">
                         <span>Preciso trocar de contador?</span>
                         <i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i>
                     </summary>
@@ -733,13 +1065,13 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="py-12 md:py-24 bg-white border-t border-slate-200">
+    <section id="contato" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold mb-4">Agende uma Análise</h2>
                 <p class="text-slate-500 text-sm md:text-base mb-6">Faça parte da revolução financeira global. Junte-se a milhões de usuários que já utilizam Stablecoins.</p>
             </div>
-            <form class="space-y-4 bg-white p-6 md:p-8 rounded-3xl shadow-subtle border border-slate-100">
+            <form class="space-y-4 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-subtle border border-slate-100 dark:border-slate-800 transition-colors">
                 <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Nome</label><input type="text" class="modern-input w-full px-4 py-3"></div>
                 <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">WhatsApp</label><input type="text" class="modern-input w-full px-4 py-3"></div>
                 <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Setor</label><select class="modern-input w-full px-4 py-3"><option>Varejo</option><option>Serviços</option><option>Indústria</option></select></div>
@@ -750,10 +1082,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-8 md:py-12 border-t border-slate-100">
+    <footer class="bg-white dark:bg-slate-900 py-8 md:py-12 border-t border-slate-100 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left"><span class="font-bold text-lg text-slate-900">Soberania<span class="text-slate-400 font-normal">Biz</span></span><p class="text-xs text-slate-400 mt-1">Consultoria em Engenharia Financeira.</p></div>
-            <div class="flex gap-8 text-xs text-slate-500 font-medium"><a href="#" class="hover:text-slate-900 transition">Privacidade</a><a href="#" class="hover:text-slate-900 transition">Termos</a></div>
+            <div class="text-center md:text-left"><span class="font-bold text-lg text-slate-900 dark:text-white transition-colors">Soberania<span class="text-slate-400 font-normal">Biz</span></span><p class="text-xs text-slate-400 mt-1">Consultoria em Engenharia Financeira.</p></div>
+            <div class="flex gap-8 text-xs text-slate-500 font-medium"><a href="#" class="hover:text-slate-900 dark:hover:text-white transition">Privacidade</a><a href="#" class="hover:text-slate-900 dark:hover:text-white transition">Termos</a></div>
             <div class="text-xs text-slate-400">&copy; 2024 Soberania Digital.</div>
         </div>
     </footer>
@@ -763,6 +1095,24 @@
     <div id="whatsapp-tooltip" class="whatsapp-tooltip"><p class="text-sm font-medium text-gray-800">Olá! <br>Posso ajudar em seu projeto?</p><button id="close-whatsapp-tooltip" class="absolute -top-2 -right-2 bg-gray-200 rounded-full p-1 text-gray-500 hover:bg-gray-300"><i data-lucide="x" class="w-3 h-3"></i></button></div>
 
     <script>
+        // --- Dark Mode Logic ---
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize Dark Mode based on preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
         // --- WHATSAPP TOOLTIP LOGIC ---
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
@@ -865,11 +1215,15 @@
                 if(diff > 0) { 
                     diffEl.innerText = "+ " + formatBRL(diff); 
                     diffEl.classList.remove('text-red-500'); 
+                    diffEl.classList.remove('dark:text-red-400'); 
                     diffEl.classList.add('text-brand-dark'); 
+                    diffEl.classList.add('dark:text-white'); 
                 } else { 
                     diffEl.innerText = formatBRL(diff); 
                     diffEl.classList.remove('text-brand-dark');
+                    diffEl.classList.remove('dark:text-white');
                     diffEl.classList.add('text-red-500'); 
+                    diffEl.classList.add('dark:text-red-400'); 
                 }
             }
         }
@@ -896,7 +1250,7 @@
                     const card = document.createElement('div');
                     card.className = "clean-card p-6 min-w-[300px] md:min-w-[350px] news-card opacity-0 transform translate-x-4 transition-all duration-700 ease-out hover:shadow-lg cursor-pointer snap-center";
                     card.style.animationDelay = `${index * 200}ms`;
-                    card.innerHTML = `<div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><i class="${news.icon} text-xl ${news.color}"></i><span class="text-xs font-bold uppercase tracking-wider text-slate-500">${news.source}</span></div><span class="text-[10px] text-slate-400 bg-slate-50 px-2 py-1 rounded">${news.date}</span></div><h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">${news.title}</h3><p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-3">${news.snippet}</p><div class="flex items-center text-xs font-bold text-brand-dark group mt-auto">Ler matéria completa <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></div>`;
+                    card.innerHTML = `<div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><i class="${news.icon} text-xl ${news.color}"></i><span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">${news.source}</span></div><span class="text-[10px] text-slate-400 bg-slate-50 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded">${news.date}</span></div><h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug">${news.title}</h3><p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-3">${news.snippet}</p><div class="flex items-center text-xs font-bold text-brand-dark dark:text-white group mt-auto">Ler matéria completa <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></div>`;
                     container.appendChild(card);
                     setTimeout(() => { card.classList.remove('opacity-0', 'translate-x-4'); }, 50 + (index * 150));
                 });
