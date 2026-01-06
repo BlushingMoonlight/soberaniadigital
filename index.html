@@ -182,7 +182,8 @@
                         <i class="fa-solid fa-moon dark:hidden"></i>
                         <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
-                    <a href="#contato" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">
+                    <!-- ANALYTICS ADDED: click_consultoria_header -->
+                    <a href="#contato" onclick="gtag('event', 'click_consultoria_header')" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">
                         Consultoria
                     </a>
                 </div>
@@ -202,7 +203,8 @@
                 <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Risco Zero</a>
                 <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Soberania Fiscal</a>
                 <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Fuga do Real</a>
-                <a href="#contato" class="block w-full text-center btn-primary mt-6 px-5 py-4 rounded-lg font-bold mobile-link">Consultoria</a>
+                <!-- ANALYTICS ADDED: click_consultoria_mobile -->
+                <a href="#contato" onclick="gtag('event', 'click_consultoria_mobile')" class="block w-full text-center btn-primary mt-6 px-5 py-4 rounded-lg font-bold mobile-link">Consultoria</a>
             </div>
         </div>
     </nav>
@@ -232,8 +234,10 @@
 
                     <!-- BOTÕES -->
                     <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4">
-                        <a href="#contato" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-center shadow-lg">Dolarizar meu Caixa Agora</a>
-                        <a href="#fiscal" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium text-center flex items-center justify-center gap-2 bg-white/80 dark:bg-slate-900/50 backdrop-blur">Entenda a Lógica <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
+                        <!-- ANALYTICS ADDED: click_dolarizar_hero -->
+                        <a href="#contato" onclick="gtag('event', 'click_dolarizar_hero')" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-center shadow-lg">Dolarizar meu Caixa Agora</a>
+                        <!-- ANALYTICS ADDED: click_entenda_logica_hero -->
+                        <a href="#fiscal" onclick="gtag('event', 'click_entenda_logica_hero')" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium text-center flex items-center justify-center gap-2 bg-white/80 dark:bg-slate-900/50 backdrop-blur">Entenda a Lógica <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
                     </div>
                     
                     <div class="mt-10 md:mt-12 grid grid-cols-2 md:flex flex-wrap gap-y-3 gap-x-6 text-sm text-slate-600 font-medium">
@@ -349,7 +353,8 @@
                             </div>
                         </div>
 
-                        <a href="#contato" class="block w-full text-center btn-primary py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <!-- ANALYTICS ADDED: click_proposta_flash -->
+                        <a href="#contato" onclick="gtag('event', 'click_proposta_flash')" class="block w-full text-center btn-primary py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                             Solicitar Proposta Gratuita
                         </a>
                         <p class="text-center text-xs text-slate-400 dark:text-slate-500 mt-4">Do contrato à operação em apenas 6 horas. Acompanhamos tudo.</p>
@@ -717,7 +722,8 @@
                         <h3 class="text-2xl font-bold mb-2 text-white">Liberdade de Verdade</h3>
                         <p class="text-slate-300">Você não precisa pedir permissão ao gerente do banco para usar seu próprio dinheiro. Ensinamos cada etapa desse processo na consultoria.</p>
                     </div>
-                    <a href="#contato" class="btn-secondary px-8 py-4 rounded-xl font-bold whitespace-nowrap bg-white text-slate-900 hover:bg-slate-100 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-950 border-none shadow-lg">
+                    <!-- ANALYTICS ADDED: click_quero_aprender_usabilidade -->
+                    <a href="#contato" onclick="gtag('event', 'click_quero_aprender_usabilidade')" class="btn-secondary px-8 py-4 rounded-xl font-bold whitespace-nowrap bg-white text-slate-900 hover:bg-slate-100 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-950 border-none shadow-lg">
                         Quero Aprender
                     </a>
                 </div>
@@ -774,7 +780,8 @@
             <!-- CTA Específico -->
             <div class="text-center mb-16">
                 <p class="text-slate-600 dark:text-slate-400 font-medium mb-6">Quer que a gente convença o seu fornecedor? Nossa consultoria inclui o <span class="tooltip-trigger">Onboarding<span class="tooltip-box">Processo de introdução e treinamento de novos usuários ou clientes ao sistema.</span></span> estratégico para os seus parceiros de negócio.</p>
-                <a href="#contato" class="btn-primary px-8 py-4 rounded-xl text-base font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2">
+                <!-- ANALYTICS ADDED: click_expandir_rede_fornecedores -->
+                <a href="#contato" onclick="gtag('event', 'click_expandir_rede_fornecedores')" class="btn-primary px-8 py-4 rounded-xl text-base font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2">
                     Expandir Minha Rede Soberana <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -1067,7 +1074,8 @@
             
                          <!-- Bottom CTA -->
                          <div class="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800">
-                            <a href="#contato" class="btn-primary w-full py-5 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
+                            <!-- ANALYTICS ADDED: click_comecar_agora_plano -->
+                            <a href="#contato" onclick="gtag('event', 'click_comecar_agora_plano')" class="btn-primary w-full py-5 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
                                 Começar Agora (Grátis)
                                 <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </a>
@@ -1165,7 +1173,8 @@
                         </div>
                     </div>
 
-                    <button type="button" class="w-full btn-primary py-5 rounded-xl font-bold text-lg mt-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <!-- ANALYTICS ADDED: click_solicitar_analise_form -->
+                    <button type="button" onclick="gtag('event', 'click_solicitar_analise_form')" class="w-full btn-primary py-5 rounded-xl font-bold text-lg mt-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                         Solicitar Análise Gratuita
                     </button>
                     
@@ -1195,9 +1204,12 @@
                         Operamos como uma <strong>DAO (<span class="tooltip-trigger">Decentralized Autonomous Organization<span class="tooltip-box">Organização Autônoma Descentralizada. Uma empresa regida por código, sem chefes centrais.</span></span>)</strong>, redefinindo a arquitetura financeira corporativa. Utilizamos <em><span class="tooltip-trigger">Smart Contracts<span class="tooltip-box">Contratos Inteligentes. Código autoexecutável que garante o cumprimento das regras sem advogados.</span></span></em> auditados na <span class="tooltip-trigger">Blockchain<span class="tooltip-box">Livro-razão digital público e imutável onde todas as transações de cripto são registradas.</span></span> para garantir governança transparente e execução <span class="tooltip-trigger">trustless<span class="tooltip-box">"Sem necessidade de confiança". O sistema funciona matematicamente, sem depender da honestidade humana.</span></span>. Nossa missão é fornecer uma <span class="tooltip-trigger">infraestrutura Web3<span class="tooltip-box">A nova internet descentralizada baseada em Blockchain.</span></span> robusta, permitindo que empresas transcendam o sistema bancário legado e alcancem soberania econômica real através de ativos digitais descentralizados.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-btc hover:border-brand-btc transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-blue-500 hover:border-blue-500 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-green-500 hover:border-green-500 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <!-- ANALYTICS ADDED: click_instagram_footer -->
+                        <a href="#" onclick="gtag('event', 'click_instagram_footer')" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-btc hover:border-brand-btc transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <!-- ANALYTICS ADDED: click_linkedin_footer -->
+                        <a href="#" onclick="gtag('event', 'click_linkedin_footer')" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-blue-500 hover:border-blue-500 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <!-- ANALYTICS ADDED: click_whatsapp_footer -->
+                        <a href="#" onclick="gtag('event', 'click_whatsapp_footer')" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-green-500 hover:border-green-500 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -1273,7 +1285,8 @@
     </footer>
 
     <!-- WHATSAPP FAB & TOOLTIP -->
-    <a href="#contato" class="avx-whatsapp-fab"><i class="fa-brands fa-whatsapp"></i></a>
+    <!-- ANALYTICS ADDED: click_whatsapp_fab -->
+    <a href="#contato" onclick="gtag('event', 'click_whatsapp_fab')" class="avx-whatsapp-fab"><i class="fa-brands fa-whatsapp"></i></a>
     <div id="whatsapp-tooltip" class="whatsapp-tooltip"><p class="text-sm font-medium text-gray-800">Olá! <br>Posso ajudar em seu projeto?</p><button id="close-whatsapp-tooltip" class="absolute -top-2 -right-2 bg-gray-200 rounded-full p-1 text-gray-500 hover:bg-gray-300"><i data-lucide="x" class="w-3 h-3"></i></button></div>
 
     <script>
