@@ -1104,28 +1104,28 @@
                 <!-- Decorative blur -->
                 <div class="absolute top-0 right-0 w-64 h-64 bg-brand-usdt/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
 
-                <form class="space-y-6 relative z-10">
+                <form action="https://formspree.io/f/mlgdqrrb" method="POST" class="space-y-6 relative z-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Personal Info -->
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Seu Nome</label>
-                            <input type="text" class="modern-input w-full px-4 py-3.5" placeholder="Ex: João Silva">
+                            <input type="text" name="nome" class="modern-input w-full px-4 py-3.5" placeholder="Ex: João Silva" required>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">WhatsApp (Com DDD)</label>
-                            <input type="tel" class="modern-input w-full px-4 py-3.5" placeholder="(00) 00000-0000">
+                            <input type="tel" name="whatsapp" class="modern-input w-full px-4 py-3.5" placeholder="(00) 00000-0000" required>
                         </div>
 
                         <!-- Company Info -->
                         <div class="md:col-span-2">
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Nome da Empresa</label>
-                            <input type="text" class="modern-input w-full px-4 py-3.5" placeholder="Ex: Soberania Ltda">
+                            <input type="text" name="empresa" class="modern-input w-full px-4 py-3.5" placeholder="Ex: Soberania Ltda" required>
                         </div>
 
                         <!-- Qualification Data -->
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Faturamento Mensal (Média)</label>
-                            <select class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer">
+                            <select name="faturamento" class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer" required>
                                 <option value="" disabled selected>Selecione um intervalo...</option>
                                 <option value="ate-50k">Até R$ 50.000</option>
                                 <option value="50k-100k">R$ 50.000 - R$ 100.000</option>
@@ -1136,7 +1136,7 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Setor de Atuação</label>
-                            <select class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer">
+                            <select name="setor" class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer" required>
                                 <option value="" disabled selected>Selecione o setor...</option>
                                 <option value="varejo">Varejo / Comércio</option>
                                 <option value="servicos">Prestação de Serviços</option>
@@ -1152,19 +1152,19 @@
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Qual o principal objetivo hoje?</label>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="objetivo" class="peer sr-only">
+                                    <input type="radio" name="objetivo" value="Reduzir Taxas" class="peer sr-only" required>
                                     <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
                                         Reduzir Taxas
                                     </div>
                                 </label>
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="objetivo" class="peer sr-only">
+                                    <input type="radio" name="objetivo" value="Proteção Patrimonial" class="peer sr-only">
                                     <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
                                         Proteção Patrimonial
                                     </div>
                                 </label>
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="objetivo" class="peer sr-only">
+                                    <input type="radio" name="objetivo" value="Independência Bancária" class="peer sr-only">
                                     <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
                                         Independência Bancária
                                     </div>
@@ -1174,7 +1174,7 @@
                     </div>
 
                     <!-- ANALYTICS ADDED: click_solicitar_analise_form -->
-                    <button type="button" onclick="gtag('event', 'click_solicitar_analise_form')" class="w-full btn-primary py-5 rounded-xl font-bold text-lg mt-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <button type="submit" onclick="gtag('event', 'click_solicitar_analise_form')" class="w-full btn-primary py-5 rounded-xl font-bold text-lg mt-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                         Solicitar Análise Gratuita
                     </button>
                     
