@@ -22,7 +22,7 @@
     <!-- Stylesheets & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"> <!-- Loading assíncrono do FontAwesome -->
     
     <!-- Scripts (Deferred for Performance) -->
@@ -45,7 +45,10 @@
                             light: '#F8FAFC', 
                         }
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'], // Fonte estilo "Banco" para números
+                    },
                     boxShadow: {
                         'fintech': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
                         'subtle': '0 2px 10px rgba(0,0,0,0.03)',
@@ -106,9 +109,31 @@
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Tooltips (Optimized Mobile) */
+        /* Tooltips (Optimized Mobile & Positioning) */
         .tooltip-trigger { border-bottom: 1px dashed #94a3b8; cursor: help; position: relative; display: inline-block; }
-        .tooltip-box { visibility: hidden; width: max-content; max-width: 250px; background-color: #0f172a; color: #fff; text-align: center; border-radius: 8px; padding: 10px 12px; position: absolute; z-index: 100; bottom: 140%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.2s, bottom 0.2s; font-size: 0.75rem; line-height: 1.4; font-weight: 500; box-shadow: 0 10px 25px rgba(0,0,0,0.25); pointer-events: none; white-space: normal; }
+        .tooltip-box { 
+            visibility: hidden; 
+            width: max-content; 
+            max-width: 250px; 
+            background-color: #0f172a; 
+            color: #fff; 
+            text-align: center; 
+            border-radius: 8px; 
+            padding: 10px 12px; 
+            position: absolute; 
+            z-index: 9999; /* Increased Z-Index to stay on top */
+            bottom: 140%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            opacity: 0; 
+            transition: opacity 0.2s, bottom 0.2s; 
+            font-size: 0.75rem; 
+            line-height: 1.4; 
+            font-weight: 500; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25); 
+            pointer-events: none; 
+            white-space: normal; 
+        }
         .tooltip-box::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #0f172a transparent transparent transparent; }
         .tooltip-trigger:hover .tooltip-box, .tooltip-trigger.active .tooltip-box { visibility: visible; opacity: 1; bottom: 125%; }
 
@@ -901,55 +926,88 @@
                 <!-- Glow Effect -->
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand-btc via-brand-usdt to-brand-dark rounded-3xl blur opacity-30 animate-pulse-slow"></div>
                 
-                <div class="relative bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row">
+                <div class="relative bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row">
                     
                     <!-- Left Side: The Hook (Price & Promise) -->
-                    <div class="md:w-2/5 bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden">
+                    <div class="md:w-2/5 bg-slate-900 text-white p-8 md:p-10 flex flex-col justify-between relative overflow-hidden rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
                         <!-- Background pattern/decoration -->
                         <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-brand-usdt rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
                         <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-brand-btc rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
             
                         <div class="relative z-10">
+                            <!-- Badge -->
                             <div class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-bold uppercase tracking-widest mb-6">
                                 Lifetime Access
                             </div>
-                            <h3 class="text-3xl font-bold mb-2">Implementação <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-btc to-yellow-200">Soberana</span></h3>
-                            <p class="text-slate-400 text-sm mb-8">Infraestrutura bancária completa sem o custo do banco.</p>
                             
+                            <!-- Price -->
                             <div class="mb-8">
-                                <span class="text-6xl font-extrabold tracking-tighter">Free</span>
-                                <span class="text-xl text-slate-400 block mt-2">Custo de Setup: R$ 0,00</span>
+                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter">R$ 0,00</span>
+                                <span class="text-lg text-slate-400 block mt-2">Custo de Setup</span>
                             </div>
-            
-                            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-                                <p class="text-xs text-slate-300 uppercase font-bold mb-2">Modelo Success Fee Dinâmico</p>
-                                <div class="flex justify-between items-end text-sm">
-                                    <div class="text-center opacity-60">
-                                        <div class="h-8 w-full bg-brand-btc/30 rounded-t mb-1 mx-auto" style="width: 4px;"></div>
-                                        5%
+                    
+                            <!-- Dynamic Fee Visualization (The Fix) -->
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
+                                <p class="text-[10px] text-slate-400 uppercase font-bold mb-6 flex items-center gap-2 tracking-widest">
+                                    <i class="fa-solid fa-layer-group text-brand-usdt"></i> Milestones de Volume
+                                </p>
+                                
+                                <div class="relative space-y-8 pl-2">
+                                    <!-- Vertical Line -->
+                                    <div class="absolute left-[15px] top-2 bottom-6 w-0.5 bg-gradient-to-b from-slate-700 via-slate-600 to-brand-usdt"></div>
+                    
+                                    <!-- Tier 1 -->
+                                    <div class="flex items-center gap-4 relative z-10 group">
+                                        <div class="w-7 h-7 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center shrink-0 shadow-lg">
+                                            <div class="w-2 h-2 bg-slate-500 rounded-full"></div>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-400 font-mono mb-0.5">Taxa Padrão</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-xl font-bold text-white font-mono">5%</span>
+                                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Volume Inicial</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="text-center opacity-80">
-                                        <div class="h-12 w-full bg-brand-btc/60 rounded-t mb-1 mx-auto" style="width: 4px;"></div>
-                                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    
+                                    <!-- Tier 2 -->
+                                    <div class="flex items-center gap-4 relative z-10 group">
+                                        <div class="w-7 h-7 rounded-full bg-slate-800 border-2 border-brand-btc flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(247,147,26,0.3)]">
+                                            <i class="fa-solid fa-check text-[10px] text-brand-btc"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-brand-btc font-mono mb-0.5">Nível Gold</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-xl font-bold text-white font-mono">3%</span>
+                                                <span class="text-[10px] text-slate-400">Volume Histórico > <strong>100k</strong></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="text-center font-bold text-brand-usdt">
-                                        <div class="h-16 w-full bg-brand-usdt rounded-t mb-1 mx-auto" style="width: 6px;"></div>
-                                        1%
+                    
+                                    <!-- Tier 3 -->
+                                    <div class="flex items-center gap-4 relative z-10 group">
+                                        <div class="w-7 h-7 rounded-full bg-brand-usdt border-2 border-white flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(16,185,129,0.5)] animate-pulse-slow">
+                                            <i class="fa-solid fa-crown text-[10px] text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-brand-usdt font-mono mb-0.5 font-bold">Soberano (Vitalício)</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-xl font-bold text-white font-mono">1%</span>
+                                                <span class="text-[10px] text-slate-400">Volume Histórico > <strong>1M</strong></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <p class="text-[10px] text-slate-400 mt-2 text-center">A taxa cai conforme você fatura.</p>
                             </div>
-                        </div>
-            
-                        <div class="relative z-10 mt-8">
-                           <p class="text-xs text-slate-400 flex items-center gap-2">
-                                <i class="fa-solid fa-shield-halved text-brand-usdt"></i> Garantia de Risco Zero
-                           </p>
+                            
+                            <p class="text-[10px] text-slate-500 mt-4 text-center italic opacity-80">
+                                *O volume é histórico e acumulativo. Uma vez desbloqueado o nível, a taxa reduzida é sua para sempre.
+                            </p>
                         </div>
                     </div>
             
                     <!-- Right Side: The Value (Features) -->
-                    <div class="md:w-3/5 p-10 bg-white dark:bg-slate-900">
+                    <div class="md:w-3/5 p-10 bg-white dark:bg-slate-900 rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none">
                          <!-- Features Grid -->
                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6">
                             <!-- Feature 1 -->
@@ -965,7 +1023,7 @@
                                 <div class="shrink-0 w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400"><i class="fa-solid fa-globe"></i></div>
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Ações Globais (<span class="tooltip-trigger">Tokenizadas<span class="tooltip-box">Ativos reais (como ações) convertidos em tokens digitais para negociação global.</span></span>)</h4>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Apple, Tesla, S&P500 na sua carteira.</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Invista em Apple, Tesla, S&P 500 e mais de 100 ativos na sua carteira em <span class="tooltip-trigger">USDT (Tether)<span class="tooltip-box">Dólar Digital (Tether). Vale sempre US$ 1,00, sem volatilidade.</span></span>.</p>
                                 </div>
                             </div>
                             <!-- Feature 3 -->
@@ -988,8 +1046,8 @@
                             <div class="flex gap-4">
                                 <div class="shrink-0 w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400"><i class="fa-solid fa-headset"></i></div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Suporte "White Glove"</h4>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Canal direto de engenharia financeira.</p>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Suporte Técnico Dedicado</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Canal direto para garantir a estabilidade técnica e operacional do seu sistema.</p>
                                 </div>
                             </div>
                             <!-- Feature 6 -->
@@ -997,7 +1055,7 @@
                                 <div class="shrink-0 w-10 h-10 rounded-full bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400"><i class="fa-solid fa-chart-line"></i></div>
                                 <div>
                                     <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Assessoria de Crescimento</h4>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Acompanhamento pós-setup vitalício.</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Acompanhamento estratégico contínuo de longo prazo.</p>
                                 </div>
                             </div>
                          </div>
@@ -1020,18 +1078,97 @@
 
     <!-- Contato -->
     <section id="contato" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-xl mx-auto px-6">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Agende uma Análise</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-6">Faça parte da revolução financeira global. Junte-se a milhões de usuários que já utilizam Stablecoins.</p>
+        <div class="max-w-4xl mx-auto px-6"> <!-- Widened max-w to fit a 2-column form -->
+            <div class="text-center mb-12">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Aplicação B2B</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-4 mb-4">Solicite sua Análise de Viabilidade</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+                    Preencha abaixo para descobrir o potencial de economia da sua empresa. Entraremos em contato rapidamente.
+                </p>
             </div>
-            <form class="space-y-4 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-subtle border border-slate-100 dark:border-slate-800 transition-colors">
-                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Nome</label><input type="text" class="modern-input w-full px-4 py-3"></div>
-                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">WhatsApp</label><input type="text" class="modern-input w-full px-4 py-3"></div>
-                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Setor</label><select class="modern-input w-full px-4 py-3"><option>Varejo</option><option>Serviços</option><option>Indústria</option></select></div>
-                <button type="button" class="w-full btn-primary py-4 rounded-xl font-bold mt-4">Iniciar Atendimento</button>
-                <p class="text-xs text-center text-slate-400 dark:text-slate-500 mt-4 flex justify-center items-center gap-2"><i class="fa-solid fa-lock"></i> Dados criptografados ponta a ponta.</p>
-            </form>
+
+            <div class="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+                <!-- Decorative blur -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-usdt/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+                <form class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Personal Info -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Seu Nome</label>
+                            <input type="text" class="modern-input w-full px-4 py-3.5" placeholder="Ex: João Silva">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">WhatsApp (Com DDD)</label>
+                            <input type="tel" class="modern-input w-full px-4 py-3.5" placeholder="(00) 00000-0000">
+                        </div>
+
+                        <!-- Company Info -->
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Nome da Empresa</label>
+                            <input type="text" class="modern-input w-full px-4 py-3.5" placeholder="Ex: Soberania Ltda">
+                        </div>
+
+                        <!-- Qualification Data -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Faturamento Mensal (Média)</label>
+                            <select class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer">
+                                <option value="" disabled selected>Selecione um intervalo...</option>
+                                <option value="ate-50k">Até R$ 50.000</option>
+                                <option value="50k-100k">R$ 50.000 - R$ 100.000</option>
+                                <option value="100k-500k">R$ 100.000 - R$ 500.000</option>
+                                <option value="500k-1m">R$ 500.000 - R$ 1 Milhão</option>
+                                <option value="acima-1m">Acima de R$ 1 Milhão</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Setor de Atuação</label>
+                            <select class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer">
+                                <option value="" disabled selected>Selecione o setor...</option>
+                                <option value="varejo">Varejo / Comércio</option>
+                                <option value="servicos">Prestação de Serviços</option>
+                                <option value="industria">Indústria</option>
+                                <option value="digital">Negócios Digitais / Info</option>
+                                <option value="saude">Saúde / Clínicas</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                         <!-- Main Pain Point -->
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Qual o principal objetivo hoje?</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="objetivo" class="peer sr-only">
+                                    <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        Reduzir Taxas
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="objetivo" class="peer sr-only">
+                                    <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        Proteção Patrimonial
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="objetivo" class="peer sr-only">
+                                    <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        Independência Bancária
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="w-full btn-primary py-5 rounded-xl font-bold text-lg mt-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        Solicitar Análise Gratuita
+                    </button>
+                    
+                    <p class="text-[10px] text-center text-slate-400 dark:text-slate-500 mt-4 flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-lock"></i> Seus dados estão protegidos por criptografia de ponta a ponta e sob sigilo empresarial.
+                    </p>
+                </form>
+            </div>
         </div>
     </section>
 
