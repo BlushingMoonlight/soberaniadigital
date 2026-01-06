@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- --- SEO & METADATA (Estilo AVX) --- -->
+    <!-- --- SEO & METADATA (Padrão AVX) --- -->
     <title>SoberaniaBiz | Engenharia Financeira & Dolarização de Caixa</title>
     <meta name="description" content="Transforme sua empresa em uma fortaleza financeira. Receba em Dólar Digital (USDT), elimine taxas bancárias e proteja seu lucro com total compliance fiscal.">
     <meta name="keywords" content="engenharia financeira, dolarização, usdt, tether, criptomoedas empresas, proteção patrimonial, compliance fiscal, automação financeira, blockchain corporativa">
     <meta name="author" content="SoberaniaBiz DAO">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0F172A"> <!-- Cor da barra do navegador no mobile -->
 
-    <!-- Open Graph (Para compartilhamento bonito no WhatsApp/LinkedIn) -->
+    <!-- Open Graph (WhatsApp/LinkedIn/Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://soberania.biz/">
     <meta property="og:title" content="SoberaniaBiz | Dolarize seu Caixa. Elimine o Banco.">
     <meta property="og:description" content="Infraestrutura financeira de nova geração para empresas. Receba em USDT, tenha liquidez imediata e proteção total contra inflação.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop">
 
-    <!-- FAVICON (Placeholder - Estrutura Pronta) -->
-    <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png"> -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png"> -->
-    <!-- <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"> -->
-    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -77,6 +73,7 @@
             background-color: #FFFFFF;
             color: #334155; 
             transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-tap-highlight-color: transparent; /* Remove highlight azul no mobile */
         }
         
         /* Dark Mode Global Overrides */
@@ -99,7 +96,7 @@
             color: #94A3B8 !important;
         }
 
-        /* Tooltip Styles */
+        /* Tooltip Styles - Otimizado Mobile */
         .tooltip-trigger {
             border-bottom: 1px dashed #94a3b8;
             cursor: help;
@@ -109,12 +106,13 @@
         
         .tooltip-box {
             visibility: hidden;
-            width: 200px;
+            width: max-content;
+            max-width: 250px; /* Limite para telas pequenas */
             background-color: #0f172a;
             color: #fff;
             text-align: center;
             border-radius: 8px;
-            padding: 8px 10px;
+            padding: 10px 12px;
             position: absolute;
             z-index: 100;
             bottom: 140%;
@@ -122,11 +120,12 @@
             transform: translateX(-50%);
             opacity: 0;
             transition: opacity 0.2s, bottom 0.2s;
-            font-size: 0.7rem;
-            line-height: 1.3;
+            font-size: 0.75rem;
+            line-height: 1.4;
             font-weight: 500;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             pointer-events: none;
+            white-space: normal; /* Permite quebra de linha */
         }
 
         .tooltip-box::after {
@@ -273,12 +272,12 @@
                 </div>
             </div>
         </div>
-        <div class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300" id="mobile-menu">
-            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg dark:shadow-none">
-                <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Risco Zero</a>
-                <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Soberania Fiscal</a>
-                <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">Fuga do Real</a>
-                <a href="#contato" class="block w-full text-center btn-primary mt-6 px-5 py-4 rounded-lg font-bold">Consultoria</a>
+        <div class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300 shadow-xl" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Risco Zero</a>
+                <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Soberania Fiscal</a>
+                <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Fuga do Real</a>
+                <a href="#contato" class="block w-full text-center btn-primary mt-6 px-5 py-4 rounded-lg font-bold mobile-link">Consultoria</a>
             </div>
         </div>
     </nav>
@@ -297,9 +296,9 @@
                     </div>
                     
                     <!-- HERO: Texto -->
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6 md:mb-8 leading-[1.1] tracking-tight text-slate-900 drop-shadow-sm">
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-8 leading-[1.15] md:leading-[1.1] tracking-tight text-slate-900 drop-shadow-sm">
                         Engenharia Financeira Anti-Bancos.<br>
-                        <span class="text-slate-500/90 dark:text-slate-400 text-2xl sm:text-4xl md:text-5xl block mt-2">Dolarize seu Caixa. Elimine o Banco.</span>
+                        <span class="text-slate-500/90 dark:text-slate-400 text-2xl sm:text-3xl md:text-5xl block mt-2">Dolarize seu Caixa. Elimine o Banco.</span>
                     </h1>
                     
                     <p class="text-base md:text-xl text-slate-700 leading-relaxed max-w-2xl font-normal drop-shadow-sm bg-white/40 dark:bg-slate-800/40 backdrop-blur-[2px] rounded-lg p-2 -ml-2 transition-colors">
@@ -1096,23 +1095,6 @@
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-xl mx-auto px-6">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Agende uma Análise</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-6">Faça parte da revolução financeira global. Junte-se a milhões de usuários que já utilizam Stablecoins.</p>
-            </div>
-            <form class="space-y-4 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl shadow-subtle border border-slate-100 dark:border-slate-800 transition-colors">
-                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Nome</label><input type="text" class="modern-input w-full px-4 py-3"></div>
-                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">WhatsApp</label><input type="text" class="modern-input w-full px-4 py-3"></div>
-                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Setor</label><select class="modern-input w-full px-4 py-3"><option>Varejo</option><option>Serviços</option><option>Indústria</option></select></div>
-                <button type="button" class="w-full btn-primary py-4 rounded-xl font-bold mt-4">Iniciar Atendimento</button>
-                <p class="text-xs text-center text-slate-400 dark:text-slate-500 mt-4 flex justify-center items-center gap-2"><i class="fa-solid fa-lock"></i> Dados criptografados ponta a ponta.</p>
-            </form>
-        </div>
-    </section>
-
     <!-- Footer Institucional & Legal -->
     <footer class="bg-slate-50 dark:bg-slate-950 pt-16 pb-8 border-t border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1240,6 +1222,16 @@
                     setTimeout(() => wt.remove(), 500); 
                 }); 
             }
+
+            // --- MOBILE MENU LOGIC IMPROVED ---
+            // Close mobile menu when a link is clicked
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const mm = document.getElementById('mobile-menu');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mm.classList.add('hidden');
+                });
+            });
 
             // --- TOOLTIP MOBILE LOGIC ---
             // Adiciona lógica para mostrar/esconder tooltips no toque (mobile)
