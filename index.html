@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoberaniaBiz | Engenharia Financeira</title>
+    
+    <!-- --- SEO & METADATA (Estilo AVX) --- -->
+    <title>SoberaniaBiz | Engenharia Financeira & Dolarização de Caixa</title>
+    <meta name="description" content="Transforme sua empresa em uma fortaleza financeira. Receba em Dólar Digital (USDT), elimine taxas bancárias e proteja seu lucro com total compliance fiscal.">
+    <meta name="keywords" content="engenharia financeira, dolarização, usdt, tether, criptomoedas empresas, proteção patrimonial, compliance fiscal, automação financeira, blockchain corporativa">
+    <meta name="author" content="SoberaniaBiz DAO">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Para compartilhamento bonito no WhatsApp/LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soberania.biz/">
+    <meta property="og:title" content="SoberaniaBiz | Dolarize seu Caixa. Elimine o Banco.">
+    <meta property="og:description" content="Infraestrutura financeira de nova geração para empresas. Receba em USDT, tenha liquidez imediata e proteção total contra inflação.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop">
+
+    <!-- FAVICON (Placeholder - Estrutura Pronta) -->
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png"> -->
+    <!-- <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"> -->
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -572,7 +590,7 @@
                     </ul>
                     <!-- Chart Area for Bitcoin Projection -->
                     <div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-700">
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-center">Potencial de Valorização (Paridade Ouro)</p>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-center">Performance (Últimos 5 Anos)</p>
                         <div class="h-48 relative">
                             <canvas id="bitcoinProjectionChart"></canvas>
                         </div>
@@ -1381,20 +1399,21 @@
                 new Chart(ctxBtcGold, {
                     type: 'bar',
                     data: {
-                        labels: ['Bitcoin Hoje', 'Potencial (Paridade Ouro)'],
+                        labels: ['Ouro', 'S&P 500', 'Bitcoin'],
                         datasets: [{
-                            label: 'Market Cap (Trilhões USD)',
-                            data: [2, 14], // Approx data
+                            label: 'Performance 5 anos (%)',
+                            data: [83, 86, 973], // Data provided by user
                             backgroundColor: [
-                                '#F7931A', // BTC Orange
-                                '#FFD700'  // Gold Yellow
+                                '#FFD700', // Gold Yellow
+                                '#1E40AF', // S&P 500 Blue
+                                '#F7931A'  // BTC Orange
                             ],
                             borderRadius: 8,
                             barThickness: 40,
                         }]
                     },
                     options: {
-                        indexAxis: 'y', // Horizontal bar chart
+                        indexAxis: 'x', // Vertical bar chart
                         responsive: true,
                         maintainAspectRatio: false,
                         plugins: {
@@ -1402,7 +1421,7 @@
                             tooltip: {
                                 callbacks: {
                                     label: function(context) {
-                                        return '$ ' + context.raw + ' Trilhões';
+                                        return '+' + context.raw + '%';
                                     }
                                 }
                             }
@@ -1410,11 +1429,11 @@
                         scales: {
                             x: {
                                 grid: { color: 'rgba(0,0,0,0.05)' },
-                                ticks: { font: { family: 'Inter' } }
+                                ticks: { font: { family: 'Inter', weight: 'bold' } }
                             },
                             y: {
-                                grid: { display: false },
-                                ticks: { font: { family: 'Inter', weight: 'bold' } }
+                                grid: { display: true },
+                                ticks: { font: { family: 'Inter' } }
                             }
                         }
                     }
