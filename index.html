@@ -488,110 +488,101 @@
         </div>
     </section>
 
-    <!-- Sobre USDT -->
+    <!-- Sobre USDT (REDESIGNED) -->
     <section id="o-que-e-usdt" class="py-12 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header Section -->
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Moeda Forte</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900 dark:text-white">USDT: O Dólar que o Banco não Toca</h2>
                 <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                    Entenda a tecnologia por trás da estabilidade financeira que implementamos no seu negócio.
+                    A estabilidade do Dólar Americano aliada à tecnologia da Blockchain. Entenda como o USDT blinda seu caixa contra a desvalorização do Real.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-                <!-- Card USDT (Foco Principal) -->
-                <div class="relative group h-full">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                    <div class="relative clean-card p-8 bg-white dark:bg-slate-800 border-green-100 dark:border-slate-700 h-full flex flex-col">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-16 h-16 rounded-2xl bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-brand-usdt text-3xl">
-                                <i class="fa-solid fa-dollar-sign"></i>
-                            </div>
-                            <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 text-xs font-bold px-3 py-1 rounded-full uppercase">Foco Principal</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">USDT (Tether) - Criptomoeda do Dólar</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Esqueça as fronteiras. O USDT (Tether) permite operar com a moeda mais forte do mundo sem as amarras do sistema bancário. É a liberdade de gastar seu lucro globalmente ou converter para Real via PIX na hora.
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                
+                <!-- Left Column: Educational Content (Expanded) -->
+                <div class="space-y-8">
+                    <div class="relative pl-6 border-l-4 border-brand-usdt">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Estabilidade Total (1:1 com USD)</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                            O USDT (Tether) é uma stablecoin lastreada no Dólar. Diferente de outras criptomoedas voláteis, <strong>1 USDT vale sempre US$ 1,00</strong>. É a segurança da moeda mais forte do mundo, sem a burocracia de abrir uma conta internacional.
                         </p>
-                        
-                        <!-- LISTA ALTERADA PARA BULLET POINTS -->
-                        <ul class="space-y-4 mb-6">
-                            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                <i class="fa-solid fa-money-bill-transfer text-brand-usdt mt-1 text-lg"></i>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-white block mb-1">Zero IOF</strong>
-                                    Economize 4-6% em transações internacionais.
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                <i class="fa-solid fa-bolt text-brand-usdt mt-1 text-lg"></i>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-white block mb-1">Liquidez Total</strong>
-                                    Converta de Real para Dólar (e vice-versa) via PIX 24/7.
-                                </div>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                <i class="fa-solid fa-building-columns text-brand-usdt mt-1 text-lg"></i>
-                                <div>
-                                    <strong class="text-slate-900 dark:text-white block mb-1">Lastro Real</strong>
-                                    Paridade 1:1 com o Dólar, auditada globalmente.
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- Chart Area for Reserves -->
-                        <div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-700">
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-center">Composição das Reservas (Auditado)</p>
-                            <div class="h-48 relative">
-                                <canvas id="reservesChart"></canvas>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <!-- Benefit 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-brand-usdt shrink-0">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Zero IOF & Taxas Bancárias</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                                    Transações internacionais e conversões livres do "custo Brasil". Economize de 4-6% em cada operação comparado ao câmbio tradicional.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Benefit 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-brand-usdt shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Liquidez Instantânea (24/7)</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                                    O mercado cripto nunca fecha. Converta de Real para Dólar (e vice-versa) via PIX em segundos, a qualquer hora do dia ou da noite.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Benefit 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-brand-usdt shrink-0">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Proteção Patrimonial</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                                    Mantenha seu lucro em moeda forte. Enquanto o Real perde valor anualmente, seu caixa em USDT mantém o poder de compra global.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card Bitcoin (Secundário) ATUALIZADO -->
-                <div class="clean-card p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 opacity-90 hover:opacity-100 transition-opacity h-full flex flex-col">
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-brand-btc text-3xl">
-                            <i class="fa-brands fa-bitcoin"></i>
+                <!-- Right Column: Data Visualization (The Dashboard) -->
+                <div class="space-y-6">
+                    <!-- Chart Card 1: Reserves -->
+                    <div class="clean-card p-6 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-lg">
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-brand-usdt"></i> Lastro Auditado
+                            </h4>
+                            <span class="text-[10px] bg-slate-100 dark:bg-slate-900 text-slate-500 px-2 py-1 rounded font-mono">Reserva USDT</span>
                         </div>
-                        <span class="bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold px-3 py-1 rounded-full uppercase">Ouro 2.0</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Bitcoin - Reserva de Valor Imortal</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                        <strong>Ouro Digital 2.0.</strong> Enquanto o Ouro físico é pesado e difícil de transportar, o Bitcoin é a escassez matemática que você envia por e-mail. No curto prazo, o preço varia. No longo prazo, a matemática vence. Se o Bitcoin alcançar o valor de mercado do Ouro, estamos falando de uma valorização potencial de <strong>7x (Rumo aos $700k+)</strong>.
-                    </p>
-                    <ul class="space-y-4 mb-6">
-                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                            <i class="fa-solid fa-lock text-brand-btc mt-1 text-lg"></i>
-                            <div>
-                                <strong class="text-slate-900 dark:text-white block mb-1">Escassez Programada</strong>
-                                Só existirão 21 milhões de unidades. Nunca mais. Proteção absoluta contra a impressão desenfreada de dinheiro pelos governos.
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                            <i class="fa-solid fa-network-wired text-brand-btc mt-1 text-lg"></i>
-                            <div>
-                                <strong class="text-slate-900 dark:text-white block mb-1">O Cofre Mais Seguro do Mundo</strong>
-                                A rede Bitcoin nunca foi hackeada. É a infraestrutura de segurança mais robusta da humanidade, descentralizada em milhares de nós globais.
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                            <i class="fa-solid fa-rocket text-brand-btc mt-1 text-lg"></i>
-                            <div>
-                                <strong class="text-slate-900 dark:text-white block mb-1">Tendência Inevitável</strong>
-                                Com <span class="tooltip-trigger">ETFs<span class="tooltip-box">Fundos de investimento em bolsa. Permitem que grandes investidores comprem Bitcoin legalmente.</span></span> da <span class="tooltip-trigger">BlackRock<span class="tooltip-box">A maior gestora de dinheiro do mundo (trilhões de dólares), que agora investe pesado em Bitcoin.</span></span> e adoção por países, o Bitcoin deixou de ser aposta e virou ativo obrigatório em tesourarias inteligentes.
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- Chart Area for Bitcoin Projection -->
-                    <div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-700">
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-center">Performance (Últimos 5 Anos)</p>
                         <div class="h-48 relative">
-                            <canvas id="bitcoinProjectionChart"></canvas>
+                            <canvas id="reservesChart"></canvas>
                         </div>
+                        <p class="text-center text-xs text-slate-400 mt-4">Auditoria global comprova paridade 1:1 com ativos reais.</p>
+                    </div>
+
+                    <!-- Chart Card 2: BRL Devaluation (NEW) -->
+                    <div class="clean-card p-6 bg-slate-900 dark:bg-slate-950 border-slate-800 shadow-lg relative overflow-hidden">
+                         <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        <div class="flex justify-between items-center mb-6 relative z-10">
+                            <h4 class="font-bold text-white text-sm uppercase tracking-wide flex items-center gap-2">
+                                <i class="fa-solid fa-arrow-trend-up text-red-500"></i> Dólar vs Real (BRL)
+                            </h4>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 border border-red-500/30 px-2 py-1 rounded font-mono">10 Anos</span>
+                        </div>
+                        <div class="h-48 relative z-10">
+                            <canvas id="brlDevaluationChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-4 relative z-10">Visualização da perda de poder de compra do Real frente ao Dólar.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1341,7 +1332,7 @@
                 });
             }
 
-            // Chart 2
+            // Chart 2 (Reserves)
             const ctxReserves = document.getElementById('reservesChart');
             if (ctxReserves && window.Chart) {
                 new Chart(ctxReserves, {
@@ -1354,24 +1345,31 @@
                 });
             }
 
-            // Chart 3
-            const ctxBtcGold = document.getElementById('bitcoinProjectionChart');
-            if (ctxBtcGold && window.Chart) {
-                new Chart(ctxBtcGold, {
-                    type: 'bar',
+            // Chart 3 (NEW: BRL Devaluation)
+            const ctxBrl = document.getElementById('brlDevaluationChart');
+            if (ctxBrl && window.Chart) {
+                new Chart(ctxBrl, {
+                    type: 'line',
                     data: {
-                        labels: ['Ouro', 'S&P 500', 'Bitcoin'],
+                        labels: ['2014', '2016', '2018', '2020', '2022', '2024'],
                         datasets: [{
-                            label: 'Performance 5 anos (%)',
-                            data: [83, 86, 973],
-                            backgroundColor: ['#FFD700', '#1E40AF', '#F7931A'],
-                            borderRadius: 8, barThickness: 40
+                            label: 'Preço do Dólar (R$)',
+                            data: [2.35, 3.40, 3.80, 5.20, 5.20, 5.75],
+                            borderColor: '#EF4444', // Red for danger/alert
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#EF4444'
                         }]
                     },
                     options: {
-                        ...commonOptions, indexAxis: 'x',
-                        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => '+' + c.raw + '%' } } },
-                        scales: { x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'Inter', weight: 'bold' } } }, y: { display: true } }
+                        ...commonOptions,
+                        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => 'R$ ' + c.raw } } },
+                        scales: { 
+                            x: { grid: { display: false, color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94A3B8' } }, 
+                            y: { display: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94A3B8' } } 
+                        }
                     }
                 });
             }
