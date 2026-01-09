@@ -291,50 +291,10 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <!-- Coluna Esquerda: Benefícios (MODIFICADA - TEXTO CONCISO) -->
-                <div class="space-y-8">
-                    <!-- Item 1 -->
-                    <div class="flex gap-5">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center text-xl shadow-lg">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Custódia Própria e Dólar Digital</h3>
-                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                                Seu faturamento vai direto para uma carteira de <span class="tooltip-trigger">autocustódia<span class="tooltip-box">Modelo onde apenas sua empresa possui as chaves de acesso. Elimina o risco de bloqueios bancários.</span></span> de posse exclusiva sua. É o conceito real de <span class="tooltip-trigger">"Banco Suíço"<span class="tooltip-box">Referência à privacidade e segurança absoluta de capital, replicada aqui via tecnologia.</span></span>: você detém a posse física e imediata do capital, protegida por <span class="tooltip-trigger">criptografia<span class="tooltip-box">Tecnologia matemática que torna seus valores invioláveis sem sua senha exclusiva.</span></span> inquebrável, eliminando riscos de bloqueios, falências ou burocracia bancária.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="flex gap-5">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-usdt text-white flex items-center justify-center text-xl shadow-lg shadow-green-200 dark:shadow-none">
-                            <i class="fa-solid fa-share-nodes"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Eficiência Operacional e Desintermediação</h3>
-                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                                Via <span class="tooltip-trigger">blockchain<span class="tooltip-box">Livro-razão digital global que registra transações sem bancos.</span></span>, o valor entra direto na sua carteira, contornando as malhas da <span class="tooltip-trigger">e-Financeira<span class="tooltip-box">Sistema da Receita Federal que monitora movimentações bancárias tradicionais.</span></span>, <span class="tooltip-trigger">SISBACEN<span class="tooltip-box">Sistema do Banco Central para monitoramento financeiro.</span></span> e os bloqueios do <span class="tooltip-trigger">SISBAJUD<span class="tooltip-box">Sistema judicial de bloqueio automático de contas bancárias.</span></span>. Isso cria uma via financeira independente e veloz, garantindo que a gestão do seu fluxo de caixa e a privacidade dos seus dados sejam controladas 100% por você.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="flex gap-5">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white flex items-center justify-center text-xl shadow-sm">
-                            <i class="fa-solid fa-file-shield"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900">Governança e Segurança Jurídica</h3>
-                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                                Operamos com total segurança jurídica, estruturados para atender normas como a <span class="tooltip-trigger">IN 1.888<span class="tooltip-box">Norma da Receita Federal que regula a declaração de criptoativos no Brasil.</span></span>, mas sem realizar reportes automáticos. Unimos a privacidade tecnológica ao respaldo legal, entregando as ferramentas para sua empresa operar em uma economia dolarizada onde a transparência contábil é uma decisão exclusivamente sua.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fluxo Visual (Substituindo Onboarding) -->
+            <!-- MODIFICAÇÃO: items-start alterado para items-center e ordem invertida -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Fluxo Visual (Movido para a Esquerda) -->
                 <div class="relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-brand-usdt to-brand-dark rounded-3xl blur opacity-20"></div>
                     <div class="relative bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-xl transition-colors h-full flex flex-col">
@@ -421,6 +381,48 @@
                             <a href="#contato" onclick="gtag('event', 'click_fluxo_visual')" class="btn-primary w-full py-3 rounded-xl font-bold text-sm shadow-lg block hover:shadow-xl transition-all">
                                 Entendi, Quero Dolarizar
                             </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Benefícios (Movido para a Direita) -->
+                <div class="space-y-8">
+                    <!-- Item 1 -->
+                    <div class="flex gap-5">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center text-xl shadow-lg">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Custódia Própria e Dólar Digital</h3>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                                Seu faturamento vai direto para uma carteira de <span class="tooltip-trigger">autocustódia<span class="tooltip-box">Modelo onde apenas sua empresa possui as chaves de acesso. Elimina o risco de bloqueios bancários.</span></span> de posse exclusiva sua. É o conceito real de <span class="tooltip-trigger">"Banco Suíço"<span class="tooltip-box">Referência à privacidade e segurança absoluta de capital, replicada aqui via tecnologia.</span></span>: você detém a posse física e imediata do capital, protegida por <span class="tooltip-trigger">criptografia<span class="tooltip-box">Tecnologia matemática que torna seus valores invioláveis sem sua senha exclusiva.</span></span> inquebrável, eliminando riscos de bloqueios, falências ou burocracia bancária.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex gap-5">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-usdt text-white flex items-center justify-center text-xl shadow-lg shadow-green-200 dark:shadow-none">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Eficiência Operacional e Desintermediação</h3>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                                Via <span class="tooltip-trigger">blockchain<span class="tooltip-box">Livro-razão digital global que registra transações sem bancos.</span></span>, o valor entra direto na sua carteira, contornando as malhas da <span class="tooltip-trigger">e-Financeira<span class="tooltip-box">Sistema da Receita Federal que monitora movimentações bancárias tradicionais.</span></span>, <span class="tooltip-trigger">SISBACEN<span class="tooltip-box">Sistema do Banco Central para monitoramento financeiro.</span></span> e os bloqueios do <span class="tooltip-trigger">SISBAJUD<span class="tooltip-box">Sistema judicial de bloqueio automático de contas bancárias.</span></span>. Isso cria uma via financeira independente e veloz, garantindo que a gestão do seu fluxo de caixa e a privacidade dos seus dados sejam controladas 100% por você.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex gap-5">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white flex items-center justify-center text-xl shadow-sm">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Governança e Segurança Jurídica</h3>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                                Operamos com total segurança jurídica, estruturados para atender normas como a <span class="tooltip-trigger">IN 1.888<span class="tooltip-box">Norma da Receita Federal que regula a declaração de criptoativos no Brasil.</span></span>, mas sem realizar reportes automáticos. Unimos a privacidade tecnológica ao respaldo legal, entregando as ferramentas para sua empresa operar em uma economia dolarizada onde a transparência contábil é uma decisão exclusivamente sua.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -537,9 +539,42 @@
                 </p>
             </div>
 
+            <!-- MODIFICAÇÃO: Ordem das colunas invertida -->
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 
-                <!-- Left Column: Educational Content -->
+                <!-- Left Column: Data Visualization (Moved to Left) -->
+                <div class="space-y-6">
+                    <!-- Chart Card 1: Reserves -->
+                    <div class="clean-card p-6 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-lg">
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-brand-usdt"></i> Lastro Auditado
+                            </h4>
+                            <span class="text-[10px] bg-slate-100 dark:bg-slate-900 text-slate-500 px-2 py-1 rounded font-mono">Reserva USDT</span>
+                        </div>
+                        <div class="h-48 relative">
+                            <canvas id="reservesChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-4">Auditoria global comprova paridade 1:1 com ativos reais.</p>
+                    </div>
+
+                    <!-- Chart Card 2: BRL Devaluation (NEW) -->
+                    <div class="clean-card p-6 bg-slate-900 dark:bg-slate-950 border-slate-800 shadow-lg relative overflow-hidden">
+                         <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        <div class="flex justify-between items-center mb-6 relative z-10">
+                            <h4 class="font-bold text-white text-sm uppercase tracking-wide flex items-center gap-2">
+                                <i class="fa-solid fa-arrow-trend-up text-red-500"></i> Dólar vs Real (BRL)
+                            </h4>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 border border-red-500/30 px-2 py-1 rounded font-mono">10 Anos</span>
+                        </div>
+                        <div class="h-48 relative z-10">
+                            <canvas id="brlDevaluationChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-4 relative z-10">Visualização da perda de poder de compra do Real frente ao Dólar.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Educational Content (Moved to Right) -->
                 <div class="space-y-8">
                     <!-- Topic 1 -->
                     <div class="flex gap-5">
@@ -591,38 +626,6 @@
                                 Disponibilidade 24/7 para conversão ou pagamentos globais, independente de feriados ou horários bancários.
                             </p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Data Visualization (The Dashboard) -->
-                <div class="space-y-6">
-                    <!-- Chart Card 1: Reserves -->
-                    <div class="clean-card p-6 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-lg">
-                        <div class="flex justify-between items-center mb-6">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide flex items-center gap-2">
-                                <i class="fa-solid fa-check-circle text-brand-usdt"></i> Lastro Auditado
-                            </h4>
-                            <span class="text-[10px] bg-slate-100 dark:bg-slate-900 text-slate-500 px-2 py-1 rounded font-mono">Reserva USDT</span>
-                        </div>
-                        <div class="h-48 relative">
-                            <canvas id="reservesChart"></canvas>
-                        </div>
-                        <p class="text-center text-xs text-slate-400 mt-4">Auditoria global comprova paridade 1:1 com ativos reais.</p>
-                    </div>
-
-                    <!-- Chart Card 2: BRL Devaluation (NEW) -->
-                    <div class="clean-card p-6 bg-slate-900 dark:bg-slate-950 border-slate-800 shadow-lg relative overflow-hidden">
-                         <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <h4 class="font-bold text-white text-sm uppercase tracking-wide flex items-center gap-2">
-                                <i class="fa-solid fa-arrow-trend-up text-red-500"></i> Dólar vs Real (BRL)
-                            </h4>
-                            <span class="text-[10px] bg-red-500/20 text-red-300 border border-red-500/30 px-2 py-1 rounded font-mono">10 Anos</span>
-                        </div>
-                        <div class="h-48 relative z-10">
-                            <canvas id="brlDevaluationChart"></canvas>
-                        </div>
-                        <p class="text-center text-xs text-slate-400 mt-4 relative z-10">Visualização da perda de poder de compra do Real frente ao Dólar.</p>
                     </div>
                 </div>
 
