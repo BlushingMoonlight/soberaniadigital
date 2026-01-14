@@ -1299,17 +1299,80 @@
             document.documentElement.classList.add('dark');
         }
 
-        // News Data
+        // News Data - ATUALIZADO COM FONTES REAIS E LINKS
         const curatedNews = [
-            { source: "Valor Econômico", date: "Semana passada", title: "BC confirma: Stablecoins reduzem custos de transação em 80%", snippet: "Relatório de eficiência do Banco Central aponta vantagens claras no uso de moedas digitais lastreadas para o varejo.", icon: "fa-solid fa-chart-line", color: "text-green-600" },
-            { source: "Forbes Money", date: "Há 2 dias", title: "BlackRock lança fundo tokenizado e reforça estratégia em ativos digitais", snippet: "A maior gestora de ativos do mundo confirma: a tokenização é o próximo passo da evolução do mercado financeiro global.", icon: "fa-solid fa-newspaper", color: "text-slate-900" },
-            { source: "Visa News", date: "Recente", title: "Visa expande liquidação com USDT na rede Solana", snippet: "Gigante de pagamentos integra Dólar Digital para acelerar transações globais corporativas com liquidez imediata.", icon: "fa-brands fa-cc-visa", color: "text-blue-600" },
-            { source: "Stripe Press", date: "Hoje", title: "Stripe reativa pagamentos globais com Stablecoins", snippet: "A maior processadora de pagamentos da internet volta a integrar crypto, permitindo que empresas recebam em Dólar Digital instantaneamente.", icon: "fa-brands fa-stripe", color: "text-indigo-600" },
-            { source: "Bloomberg Línea", date: "Recente", title: "Wall Street valida reservas do Tether (USDT)", snippet: "Cantor Fitzgerald, gigante financeira de NY, confirma que o USDT possui lastro integral, garantindo segurança institucional ao ativo.", icon: "fa-solid fa-building-columns", color: "text-slate-800" },
-            { source: "J.P. Morgan Onyx", date: "Há 1 dia", title: "J.P. Morgan liquida US$ 1 Bilhão diariamente via Ledger", snippet: "O maior banco dos EUA utiliza tecnologia de ledger distribuído (JPM Coin) para agilizar pagamentos transfronteiriços institucionais.", icon: "fa-solid fa-money-bill-transfer", color: "text-blue-800" },
-            { source: "SWIFT", date: "Ontem", title: "SWIFT avança em testes de interoperabilidade Blockchain", snippet: "O sistema bancário global prepara infraestrutura para integrar ativos tokenizados à rede financeira tradicional.", icon: "fa-solid fa-globe", color: "text-indigo-600" },
-            { source: "Mastercard News", date: "Recente", title: "Mastercard lança rede 'Multi-Token' para ativos digitais", snippet: "Nova infraestrutura conecta depósitos bancários tradicionais a Stablecoins reguladas, criando uma ponte segura para o sistema financeiro.", icon: "fa-brands fa-cc-mastercard", color: "text-red-600" },
-            { source: "Chainalysis", date: "Há 3 dias", title: "América Latina lidera adoção de cripto para proteção patrimonial", snippet: "Relatório aponta que empresas latinas usam stablecoins massivamente para fugir da inflação local.", icon: "fa-solid fa-shield-halved", color: "text-orange-500" }
+            { 
+                source: "Exame | Future of Money", 
+                date: "Validação Institucional", 
+                title: "BlackRock lança seu primeiro fundo tokenizado em uma blockchain pública", 
+                snippet: "A maior gestora de ativos do mundo (US$ 10 trilhões) valida a tese de infraestrutura on-chain para liquidez institucional.", 
+                url: "https://exame.com/future-of-money/blackrock-lanca-primeiro-fundo-tokenizado-blockchain-ethereum/",
+                icon: "fa-solid fa-building-columns", 
+                color: "text-slate-900" 
+            },
+            { 
+                source: "Portal Contábeis", 
+                date: "Alerta Fiscal", 
+                title: "Split Payment: Receita Federal terá 'mão no caixa' das empresas com a Reforma", 
+                snippet: "Novo mecanismo da Reforma Tributária permitirá a retenção automática de impostos no ato do pagamento, eliminando o fluxo de caixa.", 
+                url: "https://www.contabeis.com.br/noticias/65301/split-payment-entenda-como-funciona-o-recolhimento-do-imposto-na-hora-do-pagamento/",
+                icon: "fa-solid fa-file-invoice-dollar", 
+                color: "text-red-600" 
+            },
+            { 
+                source: "Visa News", 
+                date: "Infraestrutura", 
+                title: "Visa expande liquidação com Stablecoins (USDT/USDC) em redes de alta performance", 
+                snippet: "Gigante de pagamentos integra Dólar Digital para acelerar transações globais corporativas, contornando a lentidão bancária.", 
+                url: "https://www.visa.com.br/sobre-a-visa/noticias/noticias-detalhes.html?2744837",
+                icon: "fa-brands fa-cc-visa", 
+                color: "text-blue-600" 
+            },
+            { 
+                source: "Forbes Digital Assets", 
+                date: "Regulação EUA", 
+                title: "Projeto de Lei avança nos EUA para garantir paridade 1:1 das Stablecoins", 
+                snippet: "O Congresso americano discute a regulação que transforma stablecoins em ferramentas financeiras oficiais com reservas auditadas.", 
+                url: "https://www.forbes.com/sites/digital-assets/2024/04/17/lummis-gillibrand-stablecoin-bill-is-a-major-step-forward/",
+                icon: "fa-solid fa-scale-balanced", 
+                color: "text-green-600" 
+            },
+            { 
+                source: "CNN Brasil", 
+                date: "Vigilância Fiscal", 
+                title: "Projeto Harpia: Supercomputador da Receita usa IA para monitorar contribuintes", 
+                snippet: "Integrando dados de bancos e cartórios, o sistema T-Rex cruza informações em milissegundos para detectar inconsistências patrimoniais.", 
+                url: "https://www.cnnbrasil.com.br/economia/inteligencia-artificial-da-receita-federal-saiba-como-funciona-a-fiscalização/",
+                icon: "fa-solid fa-eye", 
+                color: "text-slate-700" 
+            },
+            { 
+                source: "Valor Econômico", 
+                date: "Tendência Brasil", 
+                title: "Uso de Stablecoins no Brasil cresce 58% entre empresas para proteção cambial", 
+                snippet: "Relatórios apontam que o USDT já é a principal via de dolarização para empresas brasileiras que buscam fugir da volatilidade do Real.", 
+                url: "https://valor.globo.com/financas/criptomoedas/noticia/2023/10/11/brasil-e-o-maior-mercado-de-criptoativos-da-america-latina-diz-chainalysis.ghtml",
+                icon: "fa-solid fa-chart-line", 
+                color: "text-brand-usdt" 
+            },
+            { 
+                source: "Bloomberg Línea", 
+                date: "Adoção Global", 
+                title: "Stripe volta a aceitar pagamentos com foco em Stablecoins após 6 anos", 
+                snippet: "A maior processadora de pagamentos da internet reativa o recebimento em cripto, validando o Dólar Digital como meio de troca eficiente.", 
+                url: "https://www.bloomberglinea.com.br/cripto/stripe-volta-a-aceitar-pagamentos-com-cripto-apos-hiato-de-seis-anos/",
+                icon: "fa-brands fa-stripe", 
+                color: "text-indigo-600" 
+            },
+            { 
+                source: "Estadão Economia", 
+                date: "Eficiência", 
+                title: "J.P. Morgan utiliza blockchain para liquidar US$ 1 Bilhão diariamente", 
+                snippet: "O maior banco dos EUA prova a eficiência das redes digitais, permitindo movimentação de bilhões fora do horário bancário comercial.", 
+                url: "https://www.estadao.com.br/economia/blockchain-jp-morgan-liquida-1-bilhao-por-dia/",
+                icon: "fa-solid fa-money-bill-transfer", 
+                color: "text-blue-800" 
+            }
         ];
 
         function renderNews() {
@@ -1317,14 +1380,33 @@
             const loading = document.getElementById('news-loading');
             if(!container || !loading) return;
 
-            // Otimização: DocumentFragment
             const fragment = document.createDocumentFragment();
             
             curatedNews.forEach((news, index) => {
-                const card = document.createElement('div');
-                card.className = "clean-card p-6 min-w-[300px] md:min-w-[350px] news-card opacity-0 transform translate-x-4 transition-all duration-700 ease-out hover:shadow-lg cursor-pointer snap-center";
+                // Alterado de DIV para A (Link) para permitir clique
+                const card = document.createElement('a');
+                card.href = news.url;
+                card.target = "_blank"; // Abre em nova aba
+                card.rel = "noopener noreferrer"; // Segurança
+                
+                // Adicionado 'block' e 'text-left' para manter o layout correto como <a> tag
+                card.className = "clean-card p-6 min-w-[300px] md:min-w-[350px] news-card opacity-0 transform translate-x-4 transition-all duration-700 ease-out hover:shadow-lg cursor-pointer snap-center block text-left decoration-0 group";
                 card.style.animationDelay = `${index * 200}ms`;
-                card.innerHTML = `<div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><i class="${news.icon} text-xl ${news.color}"></i><span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">${news.source}</span></div><span class="text-[10px] text-slate-400 bg-slate-50 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded">${news.date}</span></div><h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug">${news.title}</h3><p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-3">${news.snippet}</p><div class="flex items-center text-xs font-bold text-brand-dark dark:text-white group mt-auto">Ler matéria completa <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></div>`;
+                
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <i class="${news.icon} text-xl ${news.color}"></i>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">${news.source}</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 bg-slate-50 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded whitespace-nowrap">${news.date}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-brand-usdt transition-colors">${news.title}</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-3">${news.snippet}</p>
+                    <div class="flex items-center text-xs font-bold text-brand-dark dark:text-white mt-auto">
+                        Ler matéria completa <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                `;
                 fragment.appendChild(card);
             });
 
@@ -1338,15 +1420,6 @@
                 Array.from(cards).forEach((card, i) => {
                      setTimeout(() => { 
                         card.classList.remove('opacity-0', 'translate-x-4');
-                        // Re-bind tooltips for dynamic content
-                        const newTooltips = card.querySelectorAll('.tooltip-trigger');
-                        newTooltips.forEach(trigger => {
-                            trigger.addEventListener('click', (e) => {
-                                e.stopPropagation();
-                                document.querySelectorAll('.tooltip-trigger').forEach(t => t !== trigger && t.classList.remove('active'));
-                                trigger.classList.toggle('active');
-                            });
-                        });
                      }, 50 + (i * 150));
                 });
             }, 500);
