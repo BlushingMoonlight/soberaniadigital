@@ -1,1 +1,1616 @@
-a
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LVNH8LRCN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-0LVNH8LRCN');
+    </script>
+
+    <meta name="theme-color" content="#0F172A">
+
+    <!-- SEO & Metadata (Preserved in PT-BR as requested) -->
+    <title>SoberaniaBiz | Engenharia Financeira & Dolarização de Caixa</title>
+    <meta name="description" content="Transforme sua empresa em uma fortaleza financeira. Receba em Dólar Digital (USDT), elimine taxas bancárias e proteja seu lucro com total compliance fiscal.">
+    <meta name="keywords" content="engenharia financeira, dolarização, usdt, tether, criptomoedas empresas, proteção patrimonial, compliance fiscal, automação financeira, blockchain corporativa">
+    <meta name="author" content="SoberaniaBiz DAO">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soberania.biz/en.html">
+    <meta property="og:title" content="SoberaniaBiz | Dollarize your Cash Flow. Eliminate the Bank.">
+    <meta property="og:description" content="Next-generation financial infrastructure for business. Receive in USDT, gain immediate liquidity, and total protection against inflation.">
+    <meta property="og:image" content="Assets/img_S8F76J.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/img_D9OE8F.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Assets/img_D9OE8F.png">
+    <link rel="shortcut icon" href="Assets/img_D9OE8F.png" type="image/png">
+    <link rel="apple-touch-icon" href="Assets/img_D9OE8F.png">
+
+    <!-- Stylesheets & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            btc: '#F7931A', 
+                            usdt: '#10B981', 
+                            dark: '#0F172A', 
+                            gray: '#64748B', 
+                            light: '#F8FAFC',
+                            accent: '#4f46e5',
+                            success: '#10b981',
+                        }
+                    },
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'fintech': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
+                        'subtle': '0 2px 10px rgba(0,0,0,0.03)',
+                        'phone': '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                        'glow': '0 0 20px rgba(16, 185, 129, 0.3)',
+                    },
+                    screens: { 'xs': '375px' },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Base & Reset */
+        body { background-color: #FFFFFF; color: #334155; transition: background-color 0.3s ease, color 0.3s ease; -webkit-tap-highlight-color: transparent; }
+        .dark body { background-color: #020617; color: #94A3B8; }
+        h1, h2, h3, h4 { color: #0F172A; letter-spacing: -0.02em; transition: color 0.3s ease; }
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark .text-slate-900 { color: #F8FAFC !important; }
+        .dark .text-slate-500, .dark .text-slate-600, .dark .text-slate-700 { color: #94A3B8 !important; }
+
+        /* Components */
+        .btn-primary { background-color: #0F172A; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #334155; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); }
+        .dark .btn-primary { background-color: #F8FAFC; color: #0F172A; }
+        .dark .btn-primary:hover { background-color: #E2E8F0; }
+
+        .btn-secondary { background-color: white; color: #0F172A; border: 1px solid #E2E8F0; transition: all 0.3s ease; }
+        .btn-secondary:hover { border-color: #94A3B8; background-color: #F8FAFC; }
+        .dark .btn-secondary { background-color: transparent; color: #F8FAFC; border-color: #334155; }
+        .dark .btn-secondary:hover { background-color: #1E293B; border-color: #94A3B8; }
+
+        .clean-card { background: white; border-radius: 16px; border: 1px solid #F1F5F9; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease; }
+        .clean-card:hover { transform: translateY(-2px); border-color: #E2E8F0; }
+        .dark .clean-card { background: #0F172A; border-color: #1E293B; box-shadow: none; }
+        .dark .clean-card:hover { border-color: #334155; background: #1E293B; }
+
+        .news-card { border-left: 4px solid #0F172A; }
+        .dark .news-card { border-left: 4px solid #F8FAFC; }
+
+        .modern-input { background-color: #F8FAFC; border: 1px solid #E2E8F0; color: #0F172A; border-radius: 10px; transition: all 0.2s; }
+        .modern-input:focus { background-color: #FFFFFF; border-color: #0F172A; outline: none; box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.05); }
+        .dark .modern-input { background-color: #1E293B; border-color: #334155; color: #F8FAFC; }
+        .dark .modern-input:focus { background-color: #0F172A; border-color: #94A3B8; }
+
+        /* Utilities */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #F8FAFC; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+        .dark ::-webkit-scrollbar-track { background: #020617; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Tooltips */
+        .tooltip-trigger { border-bottom: 1px dashed #94a3b8; cursor: help; position: relative; display: inline; }
+        .tooltip-box { 
+            visibility: hidden; 
+            width: max-content; 
+            max-width: 250px; 
+            background-color: #0f172a; 
+            color: #fff; 
+            text-align: center; 
+            border-radius: 8px; 
+            padding: 10px 12px; 
+            position: absolute; 
+            z-index: 9999; 
+            bottom: 140%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            opacity: 0; 
+            transition: opacity 0.2s, bottom 0.2s; 
+            font-size: 0.75rem; 
+            line-height: 1.4; 
+            font-weight: 500; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25); 
+            pointer-events: none; 
+            white-space: normal; 
+        }
+        .tooltip-box::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #0f172a transparent transparent transparent; }
+        .tooltip-trigger:hover .tooltip-box, .tooltip-trigger.active .tooltip-box { visibility: visible; opacity: 1; bottom: 125%; }
+
+        /* Hero Background */
+        .hero-bg { background-color: #FFFFFF; background-image: linear-gradient(to right, #FFFFFF 30%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%), url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop'); background-size: cover; background-position: center 20%; background-repeat: no-repeat; transition: background-image 0.5s ease; }
+        .dark .hero-bg { background-color: #020617; background-image: linear-gradient(to right, #020617 30%, rgba(2, 6, 23, 0.95) 60%, rgba(2, 6, 23, 0) 100%), url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop'); }
+        @media (max-width: 768px) { .hero-bg { background-position: 70% center; background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 100%), url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop'); } .dark .hero-bg { background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.9) 50%, rgba(2, 6, 23, 0.5) 100%), url('https://images.unsplash.com/photo-1564659907532-6b5f98c8e70f?q=80&w=2074&auto=format&fit=crop'); } }
+
+        /* Floating WhatsApp */
+        .avx-whatsapp-fab { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; animation: avx-pulse-whatsapp 2.5s ease-in-out infinite; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; }
+        .avx-whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0px 6px 20px rgba(37, 211, 102, 0.4); }
+        @keyframes avx-pulse-whatsapp { 0% { transform: scale(1); box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); } 50% { transform: scale(1.05); box-shadow: 0px 6px 20px rgba(37, 211, 102, 0.4); } 100% { transform: scale(1); box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); } }
+        .whatsapp-tooltip { position: fixed; bottom: 110px; right: 40px; background-color: white; padding: 15px 20px; border-radius: 12px; border-bottom-right-radius: 0; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 999; max-width: 280px; opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; border: 1px solid rgba(0,0,0,0.05); }
+        .dark .whatsapp-tooltip { background-color: #1E293B; border-color: #334155; }
+        .dark .whatsapp-tooltip p { color: #F8FAFC !important; }
+        .dark .whatsapp-tooltip::after { border-top-color: #1E293B; }
+        .whatsapp-tooltip.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .whatsapp-tooltip::after { content: ''; position: absolute; bottom: -8px; right: 15px; width: 0; height: 0; border-left: 10px solid transparent; border-top: 10px solid white; }
+    </style>
+</head>
+<body class="antialiased font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center gap-2">
+                    <span class="font-bold text-lg md:text-xl tracking-tight text-slate-900 dark:text-white transition-colors">Soberania<span class="text-slate-400 font-normal">Biz</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#custo-zero" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Zero Risk</a>
+                    <a href="#fiscal" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Tax Sovereignty</a>
+                    <a href="#dados" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Hedge against the Real (BRL)</a>
+                    
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Language Selector (Desktop) -->
+                    <div class="relative inline-block text-left">
+                        <button onclick="toggleLanguageMenu()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
+                            <i class="fa-solid fa-globe"></i>
+                        </button>
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-32 rounded-lg shadow-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden">
+                            <div class="py-1">
+                                <a href="index.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">Português</a>
+                                <a href="en.html" class="block px-4 py-2 text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold bg-slate-50 dark:bg-slate-800/50">English</a>
+                                <a href="es.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">Español</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics -->
+                    <a href="#contato" onclick="gtag('event', 'click_consultoria_header')" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">
+                        Consulting
+                    </a>
+                </div>
+                <div class="-mr-2 flex md:hidden items-center gap-4">
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300 shadow-xl" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Zero Risk</a>
+                <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Tax Sovereignty</a>
+                <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Hedge against the Real (BRL)</a>
+                
+                <!-- Language Selector (Mobile) -->
+                <div class="flex items-center gap-4 px-3 py-4 border-t border-slate-100 dark:border-slate-800 mt-2">
+                    <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-globe mr-2"></i>Language</span>
+                    <div class="flex gap-3">
+                        <a href="index.html" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">PT</a>
+                        <a href="en.html" class="text-sm font-bold text-brand-accent">EN</a>
+                        <a href="es.html" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">ES</a>
+                    </div>
+                </div>
+
+                <!-- Analytics -->
+                <a href="#contato" onclick="gtag('event', 'click_consultoria_mobile')" class="block w-full text-center btn-primary mt-2 px-5 py-4 rounded-lg font-bold mobile-link">Consulting</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção: Hero -->
+    <header class="hero-bg relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden">
+        
+        <!-- Content Layer -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="max-w-3xl text-center lg:text-left mx-auto lg:mx-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50/90 dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700 mb-6 md:mb-8 shadow-sm transition-colors">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                        </span>
+                        <span class="text-[10px] md:text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide">Financial Engineering</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-8 leading-[1.15] md:leading-[1.1] tracking-tight text-slate-900 drop-shadow-sm">
+                        The Sovereignty of a <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Swiss Bank</span>.<br>
+                        <span class="text-slate-500/90 dark:text-slate-400 text-2xl sm:text-3xl md:text-5xl block mt-2">With the Agility of a Fintech.</span>
+                    </h1>
+                    
+                    <p class="text-base md:text-xl text-slate-700 leading-relaxed max-w-2xl font-normal drop-shadow-sm bg-white/40 dark:bg-slate-800/40 backdrop-blur-[2px] rounded-lg p-2 -ml-2 transition-colors mx-auto lg:mx-0">
+                        Your business operating on a private track, decoupled from the traditional banking system. We implement the infrastructure for you to settle in Digital Dollars (USDT), free from freezes and financial tracking. This is <span class="tooltip-trigger">Blockchain technology<span class="tooltip-box">Decentralized digital money.</span></span> ensuring absolute privacy and cash management 100% under your control.
+                    </p>
+
+                    <!-- Botões -->
+                    <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <!-- Analytics -->
+                        <a href="#contato" onclick="gtag('event', 'click_dolarizar_hero')" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-center shadow-lg">Dollarize My Cash Flow Now</a>
+                        <!-- Analytics -->
+                        <a href="#fiscal" onclick="gtag('event', 'click_entenda_logica_hero')" class="btn-secondary w-full sm:w-auto px-8 py-4 rounded-xl text-base font-medium text-center flex items-center justify-center gap-2 bg-white/80 dark:bg-slate-900/50 backdrop-blur">Understand the Logic <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
+                    </div>
+                    
+                    <div class="mt-10 md:mt-12 grid grid-cols-2 md:flex flex-wrap gap-y-4 gap-x-6 text-sm text-slate-600 font-medium justify-center lg:justify-start">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-usdt"></i><span>Performance-Based Partnership</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-usdt"></i><span><span class="tooltip-trigger">Genius Act Standard (USA)<span class="tooltip-box">US Law ensuring legal certainty for companies operating with crypto assets.</span></span></span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-usdt"></i><span><span class="tooltip-trigger">Compliant with IN 1.888<span class="tooltip-box">Total compliance with Brazilian Tax Authority regulation IN 1.888 for crypto asset declaration.</span></span></span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-usdt"></i><span><span class="tooltip-trigger">24/7 Global Availability<span class="tooltip-box">The system never closes. Works weekends and holidays worldwide.</span></span></span></div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block absolute top-20 right-0 w-[400px]">
+                    <!-- Visual Content -->
+                    <div class="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800 p-6 animate-float z-10 transition-colors">
+                        
+                        <!-- Card Header -->
+                        <div class="flex justify-between items-center mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-brand-success/10 dark:bg-brand-success/20 flex items-center justify-center">
+                                    <i class="fas fa-check text-brand-success"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Status</p>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">Confirmed</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Network</p>
+                                <div class="flex items-center justify-end gap-1">
+                                    <i class="fas fa-cube text-xs text-brand-accent"></i>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">Polygon</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amount Display -->
+                        <div class="text-center py-6 border-y border-slate-50 dark:border-slate-800 mb-6">
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Amount Received</p>
+                            <h3 class="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">1,250.00 <span class="text-lg text-slate-400 font-medium">USDT</span></h3>
+                            <div class="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-semibold">
+                                <i class="fas fa-arrow-up mr-1"></i> +5.2% vs BRL
+                            </div>
+                        </div>
+
+                        <!-- Protocol Info -->
+                        <div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 flex items-start gap-3">
+                            <div class="mt-1">
+                                <i class="fas fa-shield-halved text-brand-dark dark:text-slate-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase mb-1">
+                                    Smart Contract Verified
+                                </p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    Automatic execution via blockchain. No bank intermediaries. Immediate final liquidity in your private wallet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção: Eficiência Financeira -->
+    <section id="fiscal" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Legal Efficiency</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 text-slate-900"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Anti-Bank Financial Engineering</span>: Remain Invisible to the System.</h2>
+                <p class="text-slate-600 mt-4 max-w-4xl mx-auto text-lg leading-relaxed">
+                    We implement Digital Dollar solutions under the framework of the American regulation <span class="tooltip-trigger">S.394 (GENIUS Act of 2025)<span class="tooltip-box">US legislation guaranteeing legal certainty for corporate digital asset use.</span></span>. Your company gains the protection of a <span class="tooltip-trigger">"Digital Swiss Bank"<span class="tooltip-box">High-security infrastructure where you hold exclusive custody of capital.</span></span>, utilizing the most advanced and anonymous liquidity infrastructure in the global market.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Fluxo Visual -->
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="relative bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all z-10 text-center md:text-left">
+                        <div class="w-14 h-14 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center text-2xl mb-6 mx-auto md:mx-0">
+                            ⚡
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">1. Invisible Conversion</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Your client pays via Pix/Credit Card. You receive USDT instantly. The gateway handles the conversion automatically.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative bg-slate-900 dark:bg-slate-950 p-8 rounded-2xl border border-slate-800 dark:border-slate-800 shadow-xl z-10 text-center md:text-left">
+                        <div class="absolute -top-3 right-0 left-0 mx-auto w-max md:left-auto md:right-8 bg-brand-success text-white text-xs font-bold px-3 py-1 rounded-full">Protected</div>
+                        <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center text-2xl mb-6 text-brand-success mx-auto md:mx-0">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">2. Armored Wallet</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Profits are sent to your <span class="tooltip-trigger">self-custody<span class="tooltip-box">Exclusive control of keys. Money does not stay in the bank.</span></span> device. Beyond the reach of traditional banking. Neither SoberaniaBiz, banks, nor local courts hold your keys.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all z-10 text-center md:text-left">
+                        <div class="w-14 h-14 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center text-2xl mb-6 mx-auto md:mx-0">
+                            <i class="fas fa-globe-americas text-brand-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">3. Freedom of Settlement</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Immediate liquidity in BRL whenever you choose, or global supplier payments without bank exchange fees. Your assets are immunized.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefícios -->
+                <div class="space-y-8 md:space-y-10">
+                    <!-- Item 1 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center text-xl shadow-lg">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Self-Custody & Digital Dollar</h3>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                                Receiving in <span class="tooltip-trigger">Cryptocurrency<span class="tooltip-box">Decentralized digital currency.</span></span> allows transacting money via a lane separated from the banking system and outside of tracking. It is the real concept of a <span class="tooltip-trigger">"Swiss Bank"<span class="tooltip-box">Absolute privacy and capital security.</span></span>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-usdt text-white flex items-center justify-center text-xl shadow-lg shadow-green-200 dark:shadow-none">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Operational Efficiency & Disintermediation</h3>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                                Via <span class="tooltip-trigger">Cryptocurrency<span class="tooltip-box">Secure digital asset.</span></span>, the value enters directly into your wallet, bypassing the nets of <span class="tooltip-trigger">e-Financeira<span class="tooltip-box">Tax Authority system.</span></span>, <span class="tooltip-trigger">SISBACEN<span class="tooltip-box">Central Bank monitoring.</span></span> and the blocks of <span class="tooltip-trigger">SISBAJUD<span class="tooltip-box">Automatic judicial block.</span></span>. This creates an independent and fast financial lane, ensuring privacy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white flex items-center justify-center text-xl shadow-sm">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Governance & Legal Security</h3>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                                We operate with total legal security, structured to meet norms like <span class="tooltip-trigger">IN 1.888<span class="tooltip-box">Regulation for crypto assets declaration.</span></span>, but without automatic reporting. Accounting transparency is exclusively your decision.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Solução Completa (Movida e Melhorada) -->
+    <section id="solucao-completa" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <!-- Parte 1: Para quem é -->
+            <div class="mb-20">
+                <div class="text-center mb-12">
+                    <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Ideal Profile</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 text-slate-900"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Who is this service</span> designed for?</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="clean-card p-8 text-center group hover:border-brand-usdt transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-2xl text-slate-700 dark:text-slate-300 mb-6 group-hover:bg-brand-usdt group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Retail & High Volume</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Escape the "hidden partner" and eliminate receivables discounting. Shield your net margin against abusive fees and judicial freezes.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="clean-card p-8 text-center group hover:border-brand-usdt transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-2xl text-slate-700 dark:text-slate-300 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">B2B Services & Consulting</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Receive high-value fees with total privacy. No withholding at the source, immediate settlement directly into your custody.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="clean-card p-8 text-center group hover:border-brand-usdt transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-2xl text-slate-700 dark:text-slate-300 mb-6 group-hover:bg-slate-700 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Industry & Importers</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Optimize your international treasury. Pay global suppliers in USDT without exchange spreads or bureaucratic foreign exchange filings.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="clean-card p-8 text-center group hover:border-brand-usdt transition-all duration-300">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 mx-auto flex items-center justify-center text-2xl text-slate-700 dark:text-slate-300 mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Digital & Tech</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Work locally, receive globally. Keep your assets dollarized and immune to inflation, with 24/7 withdrawal availability anywhere.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parte 2: Metodologia 360 -->
+            <div>
+                <div class="text-center mb-12">
+                    <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">6-Hour Transformation</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 text-slate-900">How we turn your company into a <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Financial Fortress</span> in 6 hours.</h2>
+                </div>
+
+                <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Connecting Line (Desktop) -->
+                    <div class="hidden md:block absolute top-10 left-0 w-full h-1 bg-gradient-to-r from-slate-200 via-slate-200 to-transparent dark:from-slate-800 dark:via-slate-800 z-0"></div>
+
+                    <!-- Step 1 -->
+                    <div class="relative z-10 flex flex-col items-center text-center group">
+                        <div class="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 shadow-lg flex items-center justify-center mb-6 group-hover:border-brand-dark transition-colors duration-300">
+                            <span class="text-2xl font-bold text-slate-700 dark:text-slate-300">1</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Infrastructure Deployment</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed px-4">Full setup of the PLS Protocol. We configure your self-custody wallets so you operate as the sole owner of your capital.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative z-10 flex flex-col items-center text-center group">
+                        <div class="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 shadow-lg flex items-center justify-center mb-6 group-hover:border-brand-dark transition-colors duration-300">
+                            <span class="text-2xl font-bold text-slate-700 dark:text-slate-300">2</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Onboarding & Culture</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed px-4">We train your team to operate the system with the simplicity of a mobile payment. We remove the complexity so settlement is fast and natural.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative z-10 flex flex-col items-center text-center group">
+                        <div class="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 shadow-lg flex items-center justify-center mb-6 group-hover:border-brand-usdt transition-colors duration-300">
+                            <span class="text-2xl font-bold text-brand-usdt">3</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Supplier Engineering</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed px-4">We integrate your suppliers to accept USDT. We create an efficient financial cycle, allowing for direct payments without intermediaries.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative z-10 flex flex-col items-center text-center group">
+                        <div class="w-20 h-20 rounded-full bg-white dark:bg-slate-900 border-4 border-slate-100 dark:border-slate-800 shadow-lg flex items-center justify-center mb-6 group-hover:border-brand-btc transition-colors duration-300">
+                            <span class="text-2xl font-bold text-brand-btc">4</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Liquidity Routes (Off-Ramp)</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed px-4">We establish automatic exit channels. Convert to BRL or load global cards instantly, with full liquidity whenever your operation demands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Dados de Mercado -->
+    <section id="dados" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">The New <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Backbone</span> of Money</h2>
+                <p class="text-slate-500 text-sm md:text-base">
+                    What was once the future is now the regulated standard. <span class="tooltip-trigger">Stablecoins<span class="tooltip-box">Digital currencies with stable value, usually pegged to the Dollar.</span></span>—audited cryptocurrencies—process volumes exceeding the world's largest credit giants under the <span class="tooltip-trigger">S.394 (GENIUS Act of 2025)<span class="tooltip-box">New US law providing legal certainty for digital assets.</span></span>.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch">
+                <div class="space-y-4 md:space-y-6">
+                    <!-- Item 1 -->
+                    <div class="clean-card p-6 md:p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 dark:bg-slate-700 flex items-center justify-center text-white font-bold text-lg shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Institutional Volume (>$18 Trillion)</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                In 2024, annual settlement in Digital Dollar Cryptocurrencies surpassed Visa and Mastercard.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="clean-card p-6 md:p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 dark:bg-slate-700 flex items-center justify-center text-white font-bold text-lg shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Real-Time Settlement (24/7)</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                The legacy banking system is limited by time zones and business hours. Our infrastructure allows your company to settle payments in seconds, 365 days a year.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="clean-card p-6 md:p-8 flex items-start gap-5 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-full bg-slate-900 dark:bg-slate-700 flex items-center justify-center text-white font-bold text-lg shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Federal Security & Global Adoption</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                                With the <span class="tooltip-trigger">Genius Act<span class="tooltip-box">US financial innovation law.</span></span>, the US officially adopted the Digital Dollar as a tool for economic stability. Institutions like <span class="tooltip-trigger">BlackRock<span class="tooltip-box">The world's largest asset manager.</span></span> already treat this technology as a "flight to quality".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chart Area -->
+                <div class="bg-white dark:bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm transition-colors h-full flex flex-col justify-center">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Annual Settlement Volume (2024)</h3>
+                        <span class="text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 font-mono">Source: Visual Capitalist</span>
+                    </div>
+                    <div class="relative w-full h-64 md:h-80">
+                        <canvas id="volumeChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-6 italic">Values in Trillions of Dollars (USD)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Modelo de Negocio -->
+    <section id="custo-zero" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Partnership Model</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-slate-900"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Partnership Model</span>: Performance and Alignment of Interests.</h2>
+                <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+                    We remove technological barriers so your company can access the new Digital Dollar standard. Our business model is based on your success.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="clean-card p-8 text-center relative overflow-hidden group h-full flex flex-col">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-usdt to-brand-dark"></div>
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mx-auto flex items-center justify-center text-brand-dark dark:text-white text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fa-solid fa-ban"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Zero Infrastructure Investment (Zero Setup)</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed flex-grow">We install the entire tech layer and perform training at no cost. We take on the technical risk of implementation.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="clean-card p-8 text-center relative overflow-hidden group h-full flex flex-col">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-btc to-brand-usdt"></div>
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mx-auto flex items-center justify-center text-brand-btc text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cost Scalability (Regressive Fee)</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed flex-grow">A transparent fee structure that rewards your growth. Starting at 3%, reducing to 2% and 1% based on historical volume. The reduced rate is for life.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="clean-card p-8 text-center relative overflow-hidden group h-full flex flex-col">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-dark to-slate-500"></div>
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl mx-auto flex items-center justify-center text-brand-usdt text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Technology with "Pix-like" Simplicity</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed flex-grow">Provide your client the ease of buying in Digital Dollars with a fast experience. We only earn based on the real efficiency and liquidity generated. If you don't transact, your cost is zero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Sobre USDT -->
+    <section id="o-que-e-usdt" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Hard Currency</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900 dark:text-white">USDT: <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">The Digital Dollar</span> Outside the Banking System</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                    USDT combines the stability of hard currency with the sovereignty of <span class="tooltip-trigger">Cryptocurrency<span class="tooltip-box">Programmable and decentralized money.</span></span>. Transact with absolute privacy, outside the traditional banking system and without leaving traces in intermediaries, ensuring total control of your profit.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Data Visualization -->
+                <div class="space-y-6">
+                    <!-- Chart Card 1: Reserves -->
+                    <div class="clean-card p-6 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-lg">
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wide flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-brand-usdt"></i> Audited Reserves
+                            </h4>
+                            <span class="text-[10px] bg-slate-100 dark:bg-slate-900 text-slate-500 px-2 py-1 rounded font-mono">USDT Reserve</span>
+                        </div>
+                        <div class="h-48 relative">
+                            <canvas id="reservesChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-4">Audit officially performed by the US Government.</p>
+                    </div>
+
+                    <!-- Chart Card 2: BRL Devaluation -->
+                    <div class="clean-card p-6 bg-slate-900 dark:bg-slate-950 border-slate-800 shadow-lg relative overflow-hidden">
+                         <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        <div class="flex justify-between items-center mb-6 relative z-10">
+                            <h4 class="font-bold text-white text-sm uppercase tracking-wide flex items-center gap-2">
+                                <i class="fa-solid fa-arrow-trend-down text-red-500"></i> BRL Devaluation (1994-2034)
+                            </h4>
+                            <span class="text-[10px] bg-red-500/20 text-red-300 border border-red-500/30 px-2 py-1 rounded font-mono">History & Forecast</span>
+                        </div>
+                        <div class="h-48 relative z-10">
+                            <canvas id="brlDevaluationChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-4 relative z-10">Inverted chart demonstrates continuous loss of purchasing power.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Educational Content -->
+                <div class="space-y-8">
+                    <!-- Topic 1 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-brand-usdt text-xl">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Stability</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                                Pegged 1:1 to the US Dollar, regulated by <span class="tooltip-trigger">American Federal Law<span class="tooltip-box">US laws protecting digital asset use.</span></span> and <span class="tooltip-trigger">globally audited.<span class="tooltip-box">Reserves verified by major audit firms.</span></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Topic 2 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-slate-900 dark:bg-slate-700 flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Privacy and Autonomy</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                                Through <span class="tooltip-trigger">self-custody<span class="tooltip-box">Exclusive control of keys. The bank has no access.</span></span>, your financial flow leaves no traces in banks or monitoring systems like <span class="tooltip-trigger">e-Financeira<span class="tooltip-box">Tax Authority monitoring.</span></span> or SISBACEN.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Topic 3 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 text-xl">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Margin Efficiency</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                                Eliminate <span class="tooltip-trigger">IOF<span class="tooltip-box">Financial tax that increases traditional exchange costs.</span></span> and exchange fees. Direct transactions that protect your profit from legacy system fees.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Topic 4 -->
+                    <div class="flex gap-5 items-start">
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xl">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Real-Time Liquidity</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                                24/7 availability for conversion or global payments, regardless of holidays.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Mídia -->
+    <section id="midia" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 overflow-hidden transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-10 md:mb-16">
+                <span class="text-brand-btc text-[10px] md:text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Institutional Recognition</span>
+                <h2 class="text-2xl md:text-3xl font-bold mt-4 text-slate-900">What the <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Global Media</span> Says</h2>
+                <p class="text-slate-500 mt-2 text-sm md:text-base">Follow the latest trends in the digital financial market.</p>
+            </div>
+            <div id="news-loading" class="text-center py-12 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-circle-notch fa-spin text-3xl text-slate-300"></i>
+                <p class="text-slate-500 font-medium animate-pulse text-sm">Fetching top stories for you...</p>
+            </div>
+            <!-- Added px-4 to container to prevent clipping -->
+            <div id="news-container" class="hidden flex gap-6 overflow-x-auto pb-8 pt-2 px-4 md:px-1 snap-x snap-mandatory hide-scroll md:custom-scroll"></div>
+            <div class="mt-4 text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Swipe to see more • Verified Sources</p></div>
+        </div>
+    </section>
+
+    <!-- Seção: Ecossistema de Fornecedores -->
+    <section id="fornecedores" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">The Closed Loop</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Private Liquidity Cycle</span>: Your Dollarized Supply Chain.</h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    Immediate Settlement (T+0): Pay suppliers instantly. No bank clearing; capital reaches the partner's wallet in seconds.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Pilar 1: Liquidez -->
+                <div class="group clean-card p-8 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-brand-usdt dark:hover:border-brand-usdt transition-colors h-full flex flex-col">
+                    <div class="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center text-brand-usdt text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Immediate Settlement (T+0)</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow">
+                        Pay suppliers instantly, 24/7. No bank clearing; capital reaches the partner's wallet in seconds, straight from your <span class="tooltip-trigger">sovereign custody.<span class="tooltip-box">Direct asset possession, no intermediaries to block flow.</span></span>
+                    </p>
+                </div>
+
+                <!-- Pilar 2: Barganha -->
+                <div class="group clean-card p-8 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-brand-usdt dark:hover:border-brand-usdt transition-colors h-full flex flex-col">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Negotiation Power (Digital Dollar)</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow">
+                        Using USDT as a bargaining chip allows for discounts impossible in the traditional system by offering immediate hard-currency liquidity.
+                    </p>
+                </div>
+
+                <!-- Pilar 3: Blindagem -->
+                <div class="group clean-card p-8 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-brand-usdt dark:hover:border-brand-usdt transition-colors h-full flex flex-col">
+                    <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-600 dark:text-slate-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Flow Privacy</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-grow">
+                        Operate off the legacy grid. Protecting your purchasing strategy and keeping movements under absolute technological secrecy.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mb-16">
+                <p class="text-slate-600 dark:text-slate-400 font-medium mb-6">Want us to convince your supplier? Our consulting includes strategic <span class="tooltip-trigger">Onboarding<span class="tooltip-box">Training and integration process for partners.</span></span> for your business partners.</p>
+                <!-- Analytics -->
+                <a href="#contato" onclick="gtag('event', 'click_expandir_rede_fornecedores')" class="btn-primary px-8 py-4 rounded-xl text-base font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2">
+                    Expand My Sovereign Network <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Usabilidade -->
+    <section id="usabilidade" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+             <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-btc text-xs font-bold uppercase tracking-wider bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-900/30">Purchasing Power</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900">Your Capital, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Without Geographic</span> or Banking Borders.</h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    Receiving in Digital Dollar is just the beginning. With our infrastructure, your profit gains the mobility and privacy that the traditional banking system limits.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Cartões -->
+                <div class="group clean-card p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors h-full flex flex-col">
+                    <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Leverage & Tax Efficiency <span class="tooltip-trigger">(Lending)<span class="tooltip-box">Using crypto as collateral to obtain liquidity without selling.</span></span></h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 flex-grow">
+                        Do not burn capital. Use your USDT as collateral for tax-exempt credit or use international crypto cards <span class="tooltip-trigger">(Visa and MasterCard)<span class="tooltip-box">Globally accepted cards that debit directly from your crypto balance.</span></span> without IOF. Access immediate liquidity while keeping your value reserve intact.
+                    </p>
+                </div>
+
+                <!-- Card 2: P2P -->
+                <div class="group clean-card p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors h-full flex flex-col">
+                    <div class="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center text-brand-usdt text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-users-rays"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">On-Demand Flow Conversion</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 flex-grow">
+                        Have liquidity where and when you need it. The ecosystem allows instant conversion of USDT to your account or cash, through secure routes that ensure agility outside conventional banking monitoring.
+                    </p>
+                </div>
+
+                <!-- Card 3: Reserva -->
+                <div class="group clean-card p-8 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors h-full flex flex-col">
+                    <div class="w-14 h-14 bg-orange-50 dark:bg-orange-900/20 rounded-2xl flex items-center justify-center text-brand-btc text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Armored Strategic Reserve</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 flex-grow">
+                        Protect your margin from Real devaluation. Keep your profit in USDT or Bitcoin under your own custody. Build a global value reserve immune to local inflation and systemic freezes.
+                    </p>
+                </div>
+            </div>
+            
+             <!-- Box: Liberdade de Verdade -->
+             <div class="mt-12 bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden transition-colors">
+                <div class="absolute top-0 right-0 opacity-10 text-9xl text-white transform translate-x-1/4 -translate-y-1/4 pointer-events-none">
+                    <i class="fa-brands fa-bitcoin"></i>
+                </div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="max-w-xl">
+                        <h3 class="text-2xl font-bold mb-2 text-white">True Freedom</h3>
+                        <p class="text-slate-300">You don't need to ask the bank manager for permission to use your own money. We teach every step of this process in the consultancy.</p>
+                    </div>
+                    <!-- Analytics -->
+                    <a href="#contato" onclick="gtag('event', 'click_quero_aprender_usabilidade')" class="btn-secondary px-8 py-4 rounded-xl font-bold whitespace-nowrap bg-white text-slate-900 hover:bg-slate-100 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-950 border-none shadow-lg">
+                        I Want to Learn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Educacao do Cliente -->
+    <section id="cliente-educacao" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Simplified Adoption</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900">Educate your client, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">protect your cash.</span></h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    Scan your QR code sends the payment. You receive Dollars instantly through the SoberaniaBiz structure, fee-free, and the client gets the discount.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Passo a Passo Cliente -->
+                <div class="space-y-8">
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center text-slate-900 dark:text-white font-bold text-xl">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900">Download & Create Account</h4>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">The client uses a trusted <span class="tooltip-trigger">Exchange<span class="tooltip-box">Digital crypto brokerage.</span></span> (Binance/Coinbase). Registration is AI-validated in minutes.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-center text-slate-900 dark:text-white font-bold text-xl">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900">From Local Currency to Stablecoin</h4>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">A simple transfer to the Exchange converts BRL to USDT with one click.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-usdt text-white shadow-lg shadow-green-200 dark:shadow-none flex items-center justify-center font-bold text-xl">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900">Payment & Discount</h4>
+                            <p class="text-slate-600 mt-2 text-sm leading-relaxed">Scanning your QR code sends the payment. You receive Dollars instantly through the SoberaniaBiz structure, fee-free, and the client gets the discount.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards das Exchanges -->
+                <div class="grid gap-6">
+                    <!-- Binance Card -->
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300 group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <!-- Binance Logo SVG -->
+                            <div class="w-12 h-12 flex items-center justify-center bg-[#F0B90B]/10 rounded-xl">
+                                <svg class="w-8 h-8 text-[#F0B90B]" viewBox="0 0 32 32" fill="currentColor">
+                                    <path d="M16 0l6 6-6 6-6-6 6-6zM6 10l6 6-6 6-6-6 6-6zM26 10l6 6-6 6-6-6 6-6zM16 20l6 6-6 6-6-6 6-6zM10.5 16l5.5 5.5 5.5-5.5-5.5-5.5-5.5 5.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Binance</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Largest Global Exchange</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">The world's most popular platform. Ideal for those seeking maximum liquidity and advanced <span class="tooltip-trigger">P2P<span class="tooltip-box">Peer to Peer. Direct transaction between people.</span></span> features.</p>
+                        <div class="flex gap-3">
+                            <a href="https://apps.apple.com/us/app/binance-buy-bitcoin-crypto/id1436799971" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-apple text-base"></i> App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.binance.dev" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-google-play text-base"></i> Android
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Coinbase Card -->
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300 group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <!-- Coinbase Logo SVG -->
+                            <div class="w-12 h-12 flex items-center justify-center bg-[#0052FF]/10 rounded-xl">
+                                <svg class="w-8 h-8 text-[#0052FF]" viewBox="0 0 32 32" fill="currentColor">
+                                    <path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm-5.714-9.524h11.428c1.571 0 2.857-1.286 2.857-2.857v-7.143c0-1.571-1.286-2.857-2.857-2.857H10.286c-1.571 0-2.857 1.286-2.857 2.857v7.143c0 1.571 1.286 2.857 2.857 2.857z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Coinbase</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Institutional Standard</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Listed on the US stock exchange (Nasdaq), offering the simplest and most educational interface for beginners to buy their first Crypto.</p>
+                        <div class="flex gap-3">
+                            <a href="https://apps.apple.com/us/app/coinbase-buy-bitcoin-ether/id886427730" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-apple text-base"></i> App Store
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.coinbase.android" target="_blank" class="flex-1 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white py-2.5 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition">
+                                <i class="fa-brands fa-google-play text-base"></i> Android
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Plano de Implementacao -->
+    <section id="o-plano" class="py-16 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">Total Transparency</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 text-slate-900"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Ready Infrastructure</span>: What do we install?</h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    We believe you prefer to profit more, and have your client pay less. We deliver the engineering for your company to operate with Digital Dollar efficiency: the most modern, secure, and advanced infrastructure to move dollars globally.
+                </p>
+            </div>
+
+            <!-- Card do Plano -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Glow Effect -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-btc via-brand-usdt to-brand-dark rounded-3xl blur opacity-30 animate-pulse-slow"></div>
+                
+                <div class="relative bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row">
+                    
+                    <!-- Left Side: The Hook -->
+                    <div class="md:w-2/5 bg-slate-900 text-white p-8 md:p-10 flex flex-col justify-between relative overflow-hidden rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
+                        <!-- Background pattern -->
+                        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-brand-usdt rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+                        <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-brand-btc rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+            
+                        <div class="relative z-10">
+                            <!-- Badge -->
+                            <div class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-bold uppercase tracking-widest mb-6">
+                                Lifetime Access
+                            </div>
+                            
+                            <!-- Price -->
+                            <div class="mb-8">
+                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter">R$ 0,00</span>
+                                <span class="text-lg text-slate-400 block mt-2">Setup Cost</span>
+                            </div>
+                    
+                            <!-- Dynamic Fee Visualization -->
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
+                                <p class="text-[10px] text-slate-400 uppercase font-bold mb-6 flex items-center gap-2 tracking-widest">
+                                    <i class="fa-solid fa-layer-group text-brand-usdt"></i> Volume Milestones
+                                </p>
+                                
+                                <div class="relative space-y-8 pl-2">
+                                    <!-- Vertical Line -->
+                                    <div class="absolute left-[15px] top-2 bottom-6 w-0.5 bg-gradient-to-b from-slate-700 via-slate-600 to-brand-usdt"></div>
+                    
+                                    <!-- Tier 1 -->
+                                    <div class="flex items-center gap-4 relative z-10 group">
+                                        <div class="w-7 h-7 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center shrink-0 shadow-lg">
+                                            <div class="w-2 h-2 bg-slate-500 rounded-full"></div>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-400 font-mono mb-0.5">Standard Fee</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-xl font-bold text-white font-mono">3%</span>
+                                                <span class="text-[10px] text-slate-500 uppercase tracking-wide">Initial Volume</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- Tier 2 -->
+                                    <div class="flex items-center gap-4 relative z-10 group">
+                                        <div class="w-7 h-7 rounded-full bg-slate-800 border-2 border-brand-btc flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(247,147,26,0.3)]">
+                                            <i class="fa-solid fa-check text-[10px] text-brand-btc"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-brand-btc font-mono mb-0.5">Gold Level</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-xl font-bold text-white font-mono">2%</span>
+                                                <span class="text-[10px] text-slate-400">Historic Volume > <strong>100k</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- Tier 3 -->
+                                    <div class="flex items-center gap-4 relative z-10 group">
+                                        <div class="w-7 h-7 rounded-full bg-brand-usdt border-2 border-white flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(16,185,129,0.5)] animate-pulse-slow">
+                                            <i class="fa-solid fa-crown text-[10px] text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-brand-usdt font-mono mb-0.5 font-bold">Sovereign (Lifetime)</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-xl font-bold text-white font-mono">1%</span>
+                                                <span class="text-[10px] text-slate-400">Historic Volume > <strong>1M</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="text-[10px] text-slate-500 mt-4 text-center italic opacity-80">
+                                *Volume is historical and cumulative. Once a level is unlocked, the reduced rate is yours forever.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <!-- Right Side: The Value -->
+                    <div class="md:w-3/5 p-10 bg-white dark:bg-slate-900 rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none">
+                         <!-- Features Grid -->
+                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 md:gap-y-8 gap-x-6">
+                            <!-- Feature 1 -->
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-brand-btc"><i class="fa-solid fa-key"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Security <span class="tooltip-trigger">"Swiss Standard"<span class="tooltip-box">Maximum privacy and capital control level.</span></span></h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Swiss Standard security with full capital control. No bank counterparty risk or administrative freezes.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 2 -->
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400"><i class="fa-solid fa-globe"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Access to Global Assets</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Invest your untracked USDT profits in US stocks (like Apple, Tesla) and ETFs directly from your digital wallet.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 3 -->
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-brand-usdt"><i class="fa-solid fa-right-left"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Hybrid Liquidity Channels</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed"><span class="tooltip-trigger">Gateways<span class="tooltip-box">Bridges for conversion between Crypto and Real.</span></span> official for conversion to Real (Pix) or private routes for global supplier payments.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 4 -->
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-brand-btc"><i class="fa-solid fa-cash-register"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Cash Governance <span class="tooltip-trigger">(Watch-only)<span class="tooltip-box">Access for balance viewing only, without withdrawal power.</span></span></h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Secure management where the team views receipts, but only the owner holds the key for movement.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 5 -->
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400"><i class="fa-solid fa-headset"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Financial Engineering Support</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Continuous technical monitoring to ensure wallet stability and transactional flow.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 6 -->
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 rounded-full bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center text-cyan-600 dark:text-cyan-400"><i class="fa-solid fa-chart-line"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Compliance Consulting</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Guidance for standard <span class="tooltip-trigger">IN 1.888<span class="tooltip-box">Tax Authority regulation on Crypto Assets.</span></span> and intelligence for Digital Dollar reserve allocation.</p>
+                                </div>
+                            </div>
+                         </div>
+            
+                         <!-- Bottom CTA -->
+                         <div class="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800">
+                            <!-- Analytics -->
+                            <a href="#contato" onclick="gtag('event', 'click_comecar_agora_plano')" class="btn-primary w-full py-5 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
+                                Start Now (Free)
+                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <p class="text-center text-xs text-slate-400 mt-3 flex justify-center items-center gap-2">
+                                <i class="fa-solid fa-lock text-[10px]"></i> Limited spots for VIP monitoring this month.
+                            </p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: FAQ -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-900 transition-colors">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-10 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>Will my company only accept Crypto?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p>No. SoberaniaBiz works as a <strong>"Parallel Infrastructure"</strong>. Your current systems stay in place; we just add a high-efficiency layer. We just add the ability to receive in Bitcoin and USDT (Digital Dollar), giving clients more options and reducing costs, without replacing your current operation.</p></div></details>
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>What about volatility?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p>Most transactions are in <strong>USDT (Tether)</strong>, pegged to the Dollar. $100 remains $100.</p></div></details>
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>How much does it cost to implement?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p><strong>Zero Cost.</strong> We adopt the "Skin in the Game" model. We cover all setup, training, and configuration costs. our remuneration follows a regressive table: starting at 3% and dropping to 1% as your sales volume increases. If you don't sell, we earn nothing.</p></div></details>
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>Is it hard for my employees to operate?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p>It is extremely simple. The checkout process takes seconds: enter the amount, generate the QR Code, and check receipt on screen. Our consulting includes full team training (<span class="tooltip-trigger">Onboarding<span class="tooltip-box">Training and introduction of the team to the system.</span></span>).</p></div></details>
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>How do I use this in the real world?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p>Total freedom. Convert to BRL via instant PIX, use international crypto cards (Visa/Mastercard), or pay suppliers directly (P2P).</p></div></details>
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>Is it legal in Brazil?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p>100% legal. The Federal Revenue Service (Receita Federal) recognizes crypto-assets as digital goods. It is structured as a lawful exchange of assets for goods/services.</p></div></details>
+                <details class="group clean-card p-0"><summary class="flex justify-between items-center font-medium cursor-pointer p-4 md:p-6 hover:bg-slate-50 dark:hover:bg-slate-800 transition rounded-t-2xl text-sm md:text-base"><span>Do I need to change my accountant?</span><i class="fa-solid fa-plus text-slate-300 group-open:rotate-45 transition-transform"></i></summary><div class="px-4 md:px-6 pb-4 md:pb-6 text-sm text-slate-500 leading-relaxed"><p>No. Our infrastructure runs parallel to your traditional system. We provide the technology and necessary reports for your current accountant to make entries correctly.</p></div></details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Contato -->
+    <section id="contato" class="py-16 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-brand-usdt text-xs font-bold uppercase tracking-wider bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full border border-green-100 dark:border-green-900/30">B2B Application</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-4 mb-4">Request your <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-accent dark:from-slate-100 dark:to-brand-accent">Feasibility Analysis</span></h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+                    Fill in below to discover your company's potential savings. We will contact you shortly.
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+                <!-- Decorative blur -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-usdt/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+                <form action="https://formspree.io/f/xeeeoaed" method="POST" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Personal Info -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Your Name</label>
+                            <input type="text" name="nome" class="modern-input w-full px-4 py-3.5" placeholder="Ex: John Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">WhatsApp</label>
+                            <input type="tel" name="whatsapp" class="modern-input w-full px-4 py-3.5" placeholder="+1 (555) 000-0000" required>
+                        </div>
+
+                        <!-- Company Info -->
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Company Name</label>
+                            <input type="text" name="empresa" class="modern-input w-full px-4 py-3.5" placeholder="Ex: Sovereign LLC" required>
+                        </div>
+
+                        <!-- Qualification Data -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Monthly Revenue (Avg)</label>
+                            <select name="faturamento" class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer" required>
+                                <option value="" disabled selected>Select range...</option>
+                                <option value="ate-50k">Up to $50k</option>
+                                <option value="50k-100k">$50k - $100k</option>
+                                <option value="100k-500k">$100k - $500k</option>
+                                <option value="500k-1m">$500k - $1 Million</option>
+                                <option value="acima-1m">Above $1 Million</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">Industry Sector</label>
+                            <select name="setor" class="modern-input w-full px-4 py-3.5 appearance-none bg-no-repeat bg-right cursor-pointer" required>
+                                <option value="" disabled selected>Select sector...</option>
+                                <option value="varejo">Retail / Commerce</option>
+                                <option value="servicos">Service Provider</option>
+                                <option value="industria">Industry</option>
+                                <option value="digital">Digital Business / Info</option>
+                                <option value="saude">Health / Clinics</option>
+                                <option value="outros">Others</option>
+                            </select>
+                        </div>
+                        
+                         <!-- Main Pain Point -->
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2 ml-1">What is the main goal today?</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="objetivo" value="Reduzir Taxas" class="peer sr-only" required>
+                                    <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        Reduce Fees
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="objetivo" value="Proteção Patrimonial" class="peer sr-only">
+                                    <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        Asset Protection
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="objetivo" value="Independência Bancária" class="peer sr-only">
+                                    <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-brand-usdt peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 peer-checked:text-brand-usdt transition-all text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        Banking Independence
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics -->
+                    <button type="submit" onclick="gtag('event', 'click_solicitar_analise_form')" class="w-full btn-primary py-5 rounded-xl font-bold text-lg mt-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        Request Free Analysis
+                    </button>
+                    
+                    <p class="text-[10px] text-center text-slate-400 dark:text-slate-500 mt-4 flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-lock"></i> Your data is protected by end-to-end encryption and business confidentiality.
+                    </p>
+                    <p class="text-[10px] text-center text-slate-400 dark:text-slate-500 mt-1">
+                        We also attend via Video Call.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Institucional & Legal -->
+    <footer class="bg-slate-50 dark:bg-slate-950 pt-16 pb-8 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
+                
+                <!-- Coluna 1: Sobre a DAO -->
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="font-bold text-2xl text-slate-900 dark:text-white tracking-tight">Soberania<span class="text-slate-400 font-normal">Biz</span></span>
+                        <span class="text-[10px] bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded-full uppercase tracking-widest font-bold">DAO</span>
+                    </div>
+
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+                        Operating as a DAO <span class="tooltip-trigger">(Decentralized Autonomous Organization)<span class="tooltip-box">Organization governed by code, decentralized and without traditional hierarchy.</span></span>, redefining corporate financial architecture. We use <span class="tooltip-trigger">Smart Contracts<span class="tooltip-box">Self-executing digital contracts ensuring agreements without intermediaries.</span></span> audited on the <span class="tooltip-trigger">Blockchain<span class="tooltip-box">Public and immutable digital ledger.</span></span> to ensure transparent governance and <span class="tooltip-trigger">trustless<span class="tooltip-box">System that does not require human trust, guaranteed by math.</span></span> execution. Our mission is to provide robust <span class="tooltip-trigger">Web3<span class="tooltip-box">The new decentralized internet, focused on user ownership.</span></span> infrastructure, allowing companies to transcend the legacy banking system and achieve real economic sovereignty through <span class="tooltip-trigger">decentralized digital assets.<span class="tooltip-box">Digital goods that do not depend on governments or central banks.</span></span>
+                    </p>
+                    <div class="flex gap-4">
+                        <!-- Analytics -->
+                        <a href="#" onclick="gtag('event', 'click_instagram_footer')" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-btc hover:border-brand-btc transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <!-- Analytics -->
+                        <a href="#" onclick="gtag('event', 'click_linkedin_footer')" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-blue-500 hover:border-blue-500 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <!-- Analytics -->
+                        <a href="#" onclick="gtag('event', 'click_whatsapp_footer')" class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 hover:text-green-500 hover:border-green-500 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Acesso Rápido -->
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Quick Access</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#custo-zero" class="hover:text-brand-btc transition-colors">Skin in the Game Model</a></li>
+                        <li><a href="#fiscal" class="hover:text-brand-btc transition-colors">Tax Efficiency</a></li>
+                        <li><a href="#cliente-educacao" class="hover:text-brand-btc transition-colors">For Your Client</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Governança -->
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6">Governance & Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-brand-btc transition-colors">Terms of Use (<span class="tooltip-trigger">Smart Contract<span class="tooltip-box">Smart Contract. Immutable service rules.</span></span>)</a></li>
+                        <li><a href="#" class="hover:text-brand-btc transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-btc transition-colors">Transparency Report</a></li>
+                        <li><a href="#" class="hover:text-brand-btc transition-colors"><span class="tooltip-trigger">Compliance<span class="tooltip-box">Legal compliance. We follow all Tax Authority rules.</span></span> IN 1.888</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Legal & Compliance -->
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-10 mt-10">
+                <div class="bg-slate-100 dark:bg-slate-900/50 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 mb-8 relative overflow-hidden group">
+                    <!-- Background sutil -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent dark:via-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    
+                    <div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
+                        <div class="shrink-0 hidden md:block">
+                            <div class="w-12 h-12 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center text-xl text-slate-700 dark:text-slate-300">
+                                <i class="fa-solid fa-file-contract"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-scale-balanced text-brand-btc"></i> Legal Note on Invoicing (Notas Fiscais)
+                            </h5>
+                            
+                            <div class="space-y-4 text-xs md:text-sm leading-relaxed text-slate-600 dark:text-slate-400 text-justify">
+                                
+                                <div class="bg-white dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                                    <strong class="block text-slate-800 dark:text-slate-200 mb-1">Compliance and Responsibility:</strong>
+                                     We emphasize the importance of compliance with IN 1.888. The nature of crypto assets requires fiscal responsibility.
+                                </div>
+
+                                <div>
+                                    <strong class="text-slate-800 dark:text-slate-200">Privacy and Self-Custody:</strong>
+                                    SoberaniaBiz provides <span class="tooltip-trigger">Self-Custody<span class="tooltip-box">You maintain control of access keys to your money.</span></span> infrastructure. We ensure the technological privacy of your transactions, as we do not hold your assets.
+                                </div>
+
+                                <p class="italic text-slate-500 dark:text-slate-500 border-l-2 border-brand-btc pl-4 py-1">
+                                    <strong>Note:</strong> We provide technology for security and efficiency. Accounting management and reporting remain the responsibility of the company's management, ensuring total control over data and assets.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400 dark:text-slate-500">
+                    <p>&copy; 2024 SoberaniaBiz DAO. All rights reserved on the Blockchain.</p>
+                    <div class="flex gap-6">
+                        <span class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-green-500"></div> Operating System</span>
+                        <span>v.4.0.3 (Alpha)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB & Tooltip -->
+    <!-- Analytics -->
+    <a href="#contato" onclick="gtag('event', 'click_whatsapp_fab')" class="avx-whatsapp-fab"><i class="fa-brands fa-whatsapp"></i></a>
+    <div id="whatsapp-tooltip" class="whatsapp-tooltip"><p class="text-sm font-medium text-gray-800">Hello! <br>Want to dollarize your company?</p><button id="close-whatsapp-tooltip" class="absolute -top-2 -right-2 bg-gray-200 rounded-full p-1 text-gray-500 hover:bg-gray-300"><i data-lucide="x" class="w-3 h-3"></i></button></div>
+
+    <script>
+        // --- JS Otimizado ---
+        
+        // Dark Mode Logic
+        function toggleDarkMode() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize Theme
+        if (localStorage.theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Language Menu Logic
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('language-dropdown');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close Language Menu on Outside Click
+        window.addEventListener('click', function(e) {
+            const menu = document.getElementById('language-dropdown');
+            const button = document.querySelector('button[onclick="toggleLanguageMenu()"]');
+            if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // News Data - TRANSLATED
+        const curatedNews = [
+            { 
+                source: "MEXC Global", 
+                date: "Institutional", 
+                title: "BlackRock's BUIDL Fund surpasses $2 billion in assets", 
+                snippet: "The tokenized fund from the world's largest asset manager hits a historic milestone, validating blockchain infrastructure for major institutions.", 
+                url: "https://www.mexc.com/news/375835",
+                icon: "fa-solid fa-building-columns", 
+                color: "text-slate-900" 
+            },
+            { 
+                source: "Nasdaq", 
+                date: "Infrastructure", 
+                title: "Visa launches official settlement with USDC and USDT in the US", 
+                snippet: "Payment giant integrates stablecoins for official settlement, accelerating corporate transactions on American soil.", 
+                url: "https://www.nasdaq.com/articles/visa-unveils-stablecoin-settlement-us",
+                icon: "fa-brands fa-cc-visa", 
+                color: "text-blue-600" 
+            },
+            { 
+                source: "Payments Dive", 
+                date: "E-commerce", 
+                title: "Stripe reactivates crypto payments via collaboration with Crypto.com", 
+                snippet: "Leading online payment processor resumes crypto acceptance, expanding digital asset use in global retail.", 
+                url: "https://www.paymentsdive.com/news/stripe-to-enable-crypto-payments/809214/",
+                icon: "fa-brands fa-stripe", 
+                color: "text-indigo-600" 
+            },
+            { 
+                source: "White House", 
+                date: "US Legislation", 
+                title: "President signs the GENIUS Act: The new standard for Digital Dollar", 
+                snippet: "New legislation establishes clear guidelines for the Digital Dollar, ensuring legal certainty and boosting financial innovation.", 
+                url: "https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/",
+                icon: "fa-solid fa-flag-usa", 
+                color: "text-slate-900" 
+            },
+            { 
+                source: "Investopedia", 
+                date: "Analysis", 
+                title: "How the GENIUS Act legitimizes the crypto economy for traditional firms", 
+                snippet: "Analysis on the new law's impact on institutional adoption, bringing definitive security for companies operating in the crypto economy.", 
+                url: "https://www.investopedia.com/trump-signs-genius-act-into-law-in-major-milestone-for-crypto-industry-11774814",
+                icon: "fa-solid fa-scale-balanced", 
+                color: "text-green-600" 
+            },
+            { 
+                source: "Convergência Digital", 
+                date: "Brazil Tax", 
+                title: "Tax Reform: Split Payment system begins testing phase in 2026", 
+                snippet: "New automatic tax collection model begins tests, promising to radically transform cash flow for Brazilian companies.", 
+                url: "https://convergenciadigital.com.br/governo/reforma-tributaria-desenvolvimento-do-split-payment-ja-custou-r-722-mil-a-receita/",
+                icon: "fa-solid fa-file-invoice-dollar", 
+                color: "text-red-600" 
+            },
+            { 
+                source: "HMP Advocacia", 
+                date: "Fiscalization", 
+                title: "Project Harpia and T-Rex Supercomputer: The new era of intelligent auditing", 
+                snippet: "Federal Revenue Service intensifies use of AI and supercomputers for data crossing and real-time fiscalization.", 
+                url: "https://hmpadvocacia.com.br/2025/12/23/projeto-harpia-da-receita-federal-a-nova-era-da-fiscalizacao-inteligente/",
+                icon: "fa-solid fa-eye", 
+                color: "text-slate-700" 
+            }
+        ];
+
+        function renderNews() {
+            const container = document.getElementById('news-container');
+            const loading = document.getElementById('news-loading');
+            if(!container || !loading) return;
+
+            const fragment = document.createDocumentFragment();
+            
+            curatedNews.forEach((news, index) => {
+                // Alterado de DIV para A (Link) para permitir clique
+                const card = document.createElement('a');
+                card.href = news.url;
+                card.target = "_blank"; // Abre em nova aba
+                card.rel = "noopener noreferrer"; // Segurança
+                
+                // Adicionado 'block' e 'text-left' para manter o layout correto como <a> tag
+                card.className = "clean-card p-6 min-w-[300px] md:min-w-[350px] news-card opacity-0 transform translate-x-4 transition-all duration-700 ease-out hover:shadow-lg cursor-pointer snap-center block text-left decoration-0 group";
+                card.style.animationDelay = `${index * 200}ms`;
+                
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <i class="${news.icon} text-xl ${news.color}"></i>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">${news.source}</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 bg-slate-50 dark:bg-slate-700 dark:text-slate-300 px-2 py-1 rounded whitespace-nowrap">${news.date}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-brand-usdt transition-colors">${news.title}</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-3">${news.snippet}</p>
+                    <div class="flex items-center text-xs font-bold text-brand-dark dark:text-white mt-auto">
+                        Read full story <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                `;
+                fragment.appendChild(card);
+            });
+
+            setTimeout(() => {
+                loading.style.display = 'none';
+                container.classList.remove('hidden');
+                container.appendChild(fragment);
+                
+                // Animate entrance
+                const cards = container.children;
+                Array.from(cards).forEach((card, i) => {
+                     setTimeout(() => { 
+                        card.classList.remove('opacity-0', 'translate-x-4');
+                     }, 50 + (i * 150));
+                });
+            }, 500);
+        }
+
+        // --- Chart JS ---
+        function initCharts() {
+            const commonOptions = { responsive: true, maintainAspectRatio: false };
+            
+            // Chart 1
+            const ctxVolume = document.getElementById('volumeChart');
+            if (ctxVolume && window.Chart) {
+                new Chart(ctxVolume, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Visa', 'Stablecoins', 'Mastercard'],
+                        datasets: [{
+                            label: 'Annual Volume (Trillions USD)',
+                            data: [15.7, 18.4, 9.8],
+                            backgroundColor: ['#1A1F71', '#10B981', '#EB001B'],
+                            borderRadius: 8, borderSkipped: false
+                        }]
+                    },
+                    options: { ...commonOptions, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true } } }
+                });
+            }
+
+            // Chart 2 (Reserves)
+            const ctxReserves = document.getElementById('reservesChart');
+            if (ctxReserves && window.Chart) {
+                new Chart(ctxReserves, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['T-Bills & Cash', 'Other Investments'],
+                        datasets: [{ data: [85, 15], backgroundColor: ['#10B981', '#F7931A'], borderWidth: 0, hoverOffset: 4 }]
+                    },
+                    options: { ...commonOptions, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, font: { size: 10, family: 'Inter' }, padding: 20 } } } }
+                });
+            }
+
+            // Chart 3 (BRL Devaluation)
+            const ctxBrl = document.getElementById('brlDevaluationChart');
+            if (ctxBrl && window.Chart) {
+                new Chart(ctxBrl, {
+                    type: 'line',
+                    data: {
+                        labels: ['1994', '2000', '2005', '2010', '2015', '2020', '2024', '2034 (Est.)'],
+                        datasets: [{
+                            label: 'Dollar Price (R$)',
+                            data: [1.00, 1.95, 2.30, 1.70, 3.90, 5.20, 5.75, 10.50],
+                            borderColor: '#EF4444', 
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#EF4444'
+                        }]
+                    },
+                    options: {
+                        ...commonOptions,
+                        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => 'R$ ' + c.raw } } },
+                        scales: { 
+                            x: { grid: { display: false, color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94A3B8' } }, 
+                            y: { 
+                                display: true, 
+                                reverse: true, 
+                                grid: { color: 'rgba(255,255,255,0.05)' }, 
+                                ticks: { color: '#94A3B8' } 
+                            } 
+                        }
+                    }
+                });
+            }
+        }
+
+        // --- Init ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if(window.lucide) lucide.createIcons();
+            
+            renderNews();
+            
+            // Wait for Chart.js
+            const checkChart = setInterval(() => {
+                if (window.Chart) {
+                    initCharts();
+                    clearInterval(checkChart);
+                }
+            }, 100);
+
+            // Mobile Menu Logic
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const mm = document.getElementById('mobile-menu');
+            mobileLinks.forEach(link => link.addEventListener('click', () => mm.classList.add('hidden')));
+
+            // Tooltips Logic
+            const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
+            tooltipTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    tooltipTriggers.forEach(t => { if(t !== trigger) t.classList.remove('active'); });
+                    trigger.classList.toggle('active');
+                });
+            });
+            document.addEventListener('click', () => tooltipTriggers.forEach(t => t.classList.remove('active')));
+
+            // WhatsApp Tooltip Logic
+            const wt = document.getElementById('whatsapp-tooltip'), wc = document.getElementById('close-whatsapp-tooltip');
+            if(wt && wc) { 
+                setTimeout(() => wt.classList.add('show'), 3000); 
+                wc.addEventListener('click', (e) => { e.stopPropagation(); wt.classList.remove('show'); setTimeout(() => wt.remove(), 500); }); 
+            }
+        });
+    </script>
+</body>
+</html>
