@@ -193,10 +193,26 @@
                     <a href="#custo-zero" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Risco Zero</a>
                     <a href="#fiscal" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Soberania Fiscal</a>
                     <a href="#dados" class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Fuga do Real</a>
+                    
                     <button onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
                         <i class="fa-solid fa-moon dark:hidden"></i>
                         <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
+                    
+                    <!-- Language Selector (Desktop) -->
+                    <div class="relative inline-block text-left">
+                        <button onclick="toggleLanguageMenu()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 transition-colors">
+                            <i class="fa-solid fa-globe"></i>
+                        </button>
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-32 rounded-lg shadow-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden">
+                            <div class="py-1">
+                                <a href="index.html" class="block px-4 py-2 text-sm text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold bg-slate-50 dark:bg-slate-800/50">Português</a>
+                                <a href="en.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">English</a>
+                                <a href="es.html" class="block px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800">Español</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Analytics -->
                     <a href="#contato" onclick="gtag('event', 'click_consultoria_header')" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold">
                         Consultoria
@@ -218,8 +234,19 @@
                 <a href="#custo-zero" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Risco Zero</a>
                 <a href="#fiscal" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Soberania Fiscal</a>
                 <a href="#dados" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 mobile-link">Fuga do Real</a>
+                
+                <!-- Language Selector (Mobile) -->
+                <div class="flex items-center gap-4 px-3 py-4 border-t border-slate-100 dark:border-slate-800 mt-2">
+                    <span class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-globe mr-2"></i>Idioma</span>
+                    <div class="flex gap-3">
+                        <a href="index.html" class="text-sm font-bold text-brand-accent">PT</a>
+                        <a href="en.html" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">EN</a>
+                        <a href="es.html" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">ES</a>
+                    </div>
+                </div>
+
                 <!-- Analytics -->
-                <a href="#contato" onclick="gtag('event', 'click_consultoria_mobile')" class="block w-full text-center btn-primary mt-6 px-5 py-4 rounded-lg font-bold mobile-link">Consultoria</a>
+                <a href="#contato" onclick="gtag('event', 'click_consultoria_mobile')" class="block w-full text-center btn-primary mt-2 px-5 py-4 rounded-lg font-bold mobile-link">Consultoria</a>
             </div>
         </div>
     </nav>
@@ -1344,6 +1371,21 @@
         if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark');
         }
+
+        // Language Menu Logic
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('language-dropdown');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Close Language Menu on Outside Click
+        window.addEventListener('click', function(e) {
+            const menu = document.getElementById('language-dropdown');
+            const button = document.querySelector('button[onclick="toggleLanguageMenu()"]');
+            if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
 
         // News Data - ATUALIZADO COM FONTES REAIS E LINKS
         const curatedNews = [
